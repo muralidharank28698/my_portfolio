@@ -1,0 +1,24 @@
+.Container {
+  width: 94%;
+  top: 80px;
+  position: absolute;
+  height: max-content;
+  /* border: 1px solid red; */
+}
+.main_container {
+  /* margin: 28px 6px 0px 6px; */
+  /* margin: 90px auto; */
+  /* margin: 30px auto; */
+  /* padding: 8px; */
+  /* border: none; */
+  /* border: 1px solid red; */
+  /* justify-content: center; */
+  /* padding: 30px; */
+  margin: 60px auto;
+  width: 86%;
+}
+
+.cardTitle {
+  display: flex;
+  justify-content: space-between;
+}

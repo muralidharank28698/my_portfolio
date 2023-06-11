@@ -1,0 +1,102 @@
+.App {
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: max-content;
+  position: relative;
+}
+.header-fixed {
+  background: rgb(63, 94, 251);
+  background: radial-gradient(
+    circle,
+    rgba(63, 94, 251, 1) 0%,
+    rgba(62, 108, 181, 1) 0%,
+    rgba(43, 45, 59, 1) 100%,
+    rgba(60, 67, 78, 1) 100%,
+    rgba(3, 18, 46, 1) 100%,
+    rgba(215, 218, 224, 1) 100%,
+    rgba(32, 96, 215, 1) 100%,
+    rgba(13, 31, 65, 1) 100%,
+    rgba(13, 45, 108, 1) 100%,
+    rgba(2, 13, 34, 1) 100%,
+    rgba(3, 22, 55, 1) 100%,
+    rgba(2, 16, 42, 1) 100%,
+    rgba(21, 101, 226, 1) 100%,
+    rgba(16, 96, 227, 1) 100%,
+    rgba(6, 34, 80, 1) 100%,
+    rgba(14, 23, 117, 1) 100%,
+    rgba(2, 8, 22, 1) 100%,
+    rgba(41, 41, 43, 1) 100%
+  );
+  padding: 16px 40px;
+  height: 80px;
+  box-sizing: border-box;
+  -webkit-transition: top 0.3s;
+  transition: top 0.3s;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  border-bottom: 1px solid rgb(103, 98, 98);
+}
+
+.header-fixed .header-limiter {
+  max-width: 1200px;
+  text-align: center;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-fixed .header-limiter h1 {
+  float: left;
+  font: normal 28px Cookie, Arial, Helvetica, sans-serif;
+  line-height: 40px;
+  margin: 0;
+}
+
+.header-fixed .header-limiter .span {
+  color: #5383d3;
+}
+
+.header-fixed .header-limiter a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+body.fixed .header-fixed {
+  padding: 10px 40px;
+  height: 50px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+body.fixed .header-fixed-placeholder {
+  display: block;
+}
+
+body.fixed .header-fixed .header-limiter h1 {
+  font-size: 24px;
+  line-height: 30px;
+}
+
+body.fixed .header-fixed .header-limiter nav {
+  line-height: 28px;
+  font-size: 13px;
+}
+
+@media all and (max-width: 600px) {
+  .header-fixed {
+    padding: 20px 0;
+    height: 75px;
+  }
+
+  .header-fixed .header-limiter h1 {
+    float: none;
+    margin: -8px 0 10px;
+    text-align: center;
+    font-size: 24px;
+    line-height: 1;
+  }
+}
