@@ -3,138 +3,355 @@ import './Educationpage.css';
 import { Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
-import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import Menus from '../MenuSide/Menus';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardHeader from '@mui/material/CardHeader';
+import Headerpage from '../Header/Headerpage';
+import Footer from '../Footer';
 
-const AcademicDetail = [
-  {
-    degree: 'Post Graduate',
-    Year: '2019 - 2022',
-    course: 'MCA',
-    college: 'Puducherry Technological University',
-    cgpa: '8.11',
+const CustomCard = styled(Card)(({ theme }) => ({
+  '&.MuiPaper-root': {
+    boxShadow: 'none',
+    background: 'none',
+    margin: 'auto',
+    '& .MuiTypography-root': {
+      color: '#707887',
+      fontSize: 17,
+      textAlign: 'center',
+    },
+    '& .MuiCardHeader-root': {
+      background: 'rgb(78 154 208)',
+      borderRadius: 10,
+      textAlign: 'center',
+      padding: 5,
+      '& .MuiTypography-h5': {
+        color: '#FFFFFF',
+        fontSize: 18,
+        fontWeight: 'bold',
+      },
+    },
+    '& .MuiCardContent-root': {
+      padding: 0,
+      marginTop: 16,
+    },
   },
-  {
-    degree: 'Under Graduate',
-    Year: '2016 - 2019',
-    course: 'Bca',
-    college: 'Saradha Gangadharan College',
-    cgpa: '6.12',
+}));
+const CustomPaper = styled(Paper)(({ theme }) => ({
+  '&.MuiPaper-root': {
+    background: 'none',
+    width: '100%',
+    height: '100%',
+    boxShadow: 'none',
   },
-];
-
+}));
 const CustomTypography = styled(Typography)(({ theme }) => ({
   '&.MuiTypography-root': {
-    marginBottom: 16,
-    fontSize: 16,
-    color: '#0f2e66',
+    fontSize: 14,
+    color: '#eee',
+  },
+}));
+const TableHeadingTypography = styled(Typography)(({ theme }) => ({
+  '&.MuiTypography-root': {
+    color: 'orange',
+    fontSize: 14,
+    textTransform: 'uppercase',
     fontWeight: 'bold',
+    letterSpacing: 1.3,
   },
 }));
-const TableTypography = styled(Typography)(({ theme }) => ({
+const TableContentTypography = styled(Typography)(({ theme }) => ({
   '&.MuiTypography-root': {
-    color: '#738BB9',
+    color: '#707887',
+    fontSize: 16,
   },
 }));
-const TitleTypography = styled(Typography)(({ theme }) => ({
+const StyledTable = styled(Table)(({ theme }) => ({
+  '&.MuiTable-root': {
+    width: '96%',
+    margin: 'auto',
+    '& .MuiTableCell-root': {
+      border: 'none',
+      padding: 6,
+    },
+    '& .MuiTableCell-root:first-child': {
+      color: '#eee',
+    },
+    '& .MuiTableCell-root:last-child': {
+      textAlign: 'right',
+    },
+  },
+}));
+export const EductionPageTitleTypography = styled(Typography)(({ theme }) => ({
   '&.MuiTypography-root': {
     color: '#0f2e66',
-    fontWeight: 560,
-    fontSize: 18,
+    borderBottom: '1px solid #dce0e1',
+    borderRadius: 4,
+    fontWeight: 'bold',
+    fontSize: 23,
     letterSpacing: 'normal',
-  },
-}));
-
-const StyledPaper = styled(Paper)(({ theme }) => ({
-  '&.MuiPaper-root': {
-    width: '100%',
     margin: 'auto',
-    overflowX: 'auto',
-    boxShadow: 'none',
-    '& .MuiTable-root': {
-      width: '100%',
-      minWidth: 600,
-      '& .MuiTableHead-root': {
-        background: '#c3cce1',
-      },
-      '& .MuiTableCell-root': {
-        paddingBottom: 4,
-        paddingTop: 6,
-        border: 'none',
-      },
-      '& .MuiTableRow-root': {},
-    },
-
-    '& tr': {
-      '&:first-child th:first-child': { borderTopLeftRadius: 6 },
-      '&:first-child th:last-child': {
-        borderTopRightRadius: 6,
-      },
-      '&:last-child th:last-child': { borderBottomRightRadius: 6 },
-      '&:last-child th:first-child': { borderBottomLeftRadius: 6 },
-    },
-    '& .MuiDivider-root': {
-      height: 64,
-    },
+    padding: 12,
   },
 }));
 
 const Educationpage = () => {
   return (
     <div className="container">
-      <div className="wrapContainer">
-        <TitleTypography variant="h2">My Graduation details</TitleTypography>
-        {AcademicDetail?.map((item) => {
-          return (
-            <div className="tableContainer" key={item?.Year}>
-              <div className="tableContent">
-                <CustomTypography variant="h5">{item?.degree}</CustomTypography>
-                <StyledPaper>
-                  <Table aria-label="customized table">
-                    <TableHead>
-                      <TableRow>
-                        <TableCell align="center">
-                          <TableTypography variant="body1">Year</TableTypography>
-                        </TableCell>
-                        <TableCell align="center">
-                          <TableTypography variant="body1">Degree</TableTypography>
-                        </TableCell>
-                        <TableCell align="center">
-                          <TableTypography variant="body1">College</TableTypography>
-                        </TableCell>
-                        <TableCell align="center">
-                          <TableTypography variant="body1">CGPA</TableTypography>
-                        </TableCell>
-                      </TableRow>
-                    </TableHead>
-                    <TableBody>
-                      <TableRow>
-                        <TableCell align="center">
-                          <Typography variant="body1">{item?.Year}</Typography>
-                        </TableCell>
-                        <TableCell align="center">
-                          <Typography variant="body1">{item?.course}</Typography>
-                        </TableCell>
-                        <TableCell align="center">
-                          <Typography variant="body1">{item?.college}</Typography>
-                        </TableCell>
-                        <TableCell align="center">
-                          <Typography variant="body1">{item?.cgpa}</Typography>
-                        </TableCell>
-                      </TableRow>
-                    </TableBody>
-                  </Table>
-                </StyledPaper>
+      <Headerpage />
+      <div className="contianerBody">
+        <div
+          style={{
+            margin: 'auto',
+            textAlign: 'center',
+            width: '75%',
+            borderRadius: 3,
+            padding: 4,
+          }}
+        >
+          <EductionPageTitleTypography variant="h6">Education details</EductionPageTitleTypography>
+        </div>
+        <div className="wrapContainer">
+          <div style={{ width: '480px' }}>
+            <CustomPaper>
+              <div className="contentDiv">
+                <CustomCard>
+                  <CardHeader title="Post Graduate" />
+                  <CardContent>
+                    <CustomTypography>
+                      I successfully completed my post-graduate studies from 2019 to 2022. Explore
+                      my portfolio for details about my academic accomplishments during this period.
+                    </CustomTypography>
+                  </CardContent>
+                </CustomCard>
               </div>
-            </div>
-          );
-        })}
+            </CustomPaper>
+          </div>
+          <div className="pg">
+            <CustomPaper>
+              <div className="contentDiv">
+                <StyledTable>
+                  <TableRow>
+                    <TableCell>
+                      <TableHeadingTypography variant="body1">Year :</TableHeadingTypography>
+                    </TableCell>
+                    <TableCell>
+                      <TableContentTypography variant="body1">2019 - 2022</TableContentTypography>
+                    </TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>
+                      <TableHeadingTypography variant="body1">Course :</TableHeadingTypography>
+                    </TableCell>
+                    <TableCell>
+                      <TableContentTypography variant="body1">MCA</TableContentTypography>
+                    </TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>
+                      <TableHeadingTypography variant="body1">College :</TableHeadingTypography>
+                    </TableCell>
+                    <TableCell>
+                      <TableContentTypography variant="body1">
+                        Puducherry Technological University
+                      </TableContentTypography>
+                    </TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>
+                      <TableHeadingTypography variant="body1">CGPA :</TableHeadingTypography>
+                    </TableCell>
+                    <TableCell>
+                      <TableContentTypography variant="body1">8.11</TableContentTypography>
+                    </TableCell>
+                  </TableRow>
+                </StyledTable>
+              </div>
+            </CustomPaper>
+          </div>
+        </div>
+        <div className="wrapContainerReverse">
+          <div className="ug">
+            <CustomPaper>
+              <div className="contentDiv">
+                <StyledTable className="educationTable">
+                  <TableRow>
+                    <TableCell>
+                      <TableHeadingTypography variant="body1">Year :</TableHeadingTypography>
+                    </TableCell>
+                    <TableCell>
+                      <TableContentTypography variant="body1">2016 - 2019</TableContentTypography>
+                    </TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>
+                      <TableHeadingTypography variant="body1">Course :</TableHeadingTypography>
+                    </TableCell>
+                    <TableCell>
+                      <TableContentTypography variant="body1">BCA</TableContentTypography>
+                    </TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>
+                      <TableHeadingTypography variant="body1">College :</TableHeadingTypography>
+                    </TableCell>
+                    <TableCell>
+                      <TableContentTypography variant="body1">
+                        Saradha Gangadharan College
+                      </TableContentTypography>
+                    </TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>
+                      <TableHeadingTypography variant="body1">CGPA :</TableHeadingTypography>
+                    </TableCell>
+                    <TableCell>
+                      <TableContentTypography variant="body1">6.12</TableContentTypography>
+                    </TableCell>
+                  </TableRow>
+                </StyledTable>
+              </div>
+            </CustomPaper>
+          </div>
+          <div style={{ width: '480px' }}>
+            <CustomPaper>
+              <div className="contentDiv">
+                <CustomCard>
+                  <CardHeader title="Under Graduate" />
+                  <CardContent>
+                    <CustomTypography>
+                      I completed my bachelor's degree from 2016 to 2019. Check out my portfolio for
+                      additional details on my academic pursuits during this time.
+                    </CustomTypography>
+                  </CardContent>
+                </CustomCard>
+              </div>
+            </CustomPaper>
+          </div>
+        </div>
+        <div className="wrapContainer">
+          <div style={{ width: '480px' }}>
+            <CustomPaper>
+              <div className="contentDiv">
+                <CustomCard>
+                  <CardHeader title="Higher Secondary" />
+                  <CardContent>
+                    <CustomTypography>
+                      During 2015 to 2016, I immersed myself in higher secondary education, a
+                      crucial step that propelled me towards my educational aspirations.
+                    </CustomTypography>
+                  </CardContent>
+                </CustomCard>
+              </div>
+            </CustomPaper>
+          </div>
+          <div className="hsc">
+            <CustomPaper>
+              <div className="contentDiv">
+                <StyledTable className="educationTable">
+                  <TableRow>
+                    <TableCell>
+                      <TableHeadingTypography variant="body1">Year :</TableHeadingTypography>
+                    </TableCell>
+                    <TableCell>
+                      <TableContentTypography variant="body1">2015 - 2016</TableContentTypography>
+                    </TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>
+                      <TableHeadingTypography variant="body1">Standard :</TableHeadingTypography>
+                    </TableCell>
+                    <TableCell>
+                      <TableContentTypography variant="body1">12th</TableContentTypography>
+                    </TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>
+                      <TableHeadingTypography variant="body1">School :</TableHeadingTypography>
+                    </TableCell>
+                    <TableCell>
+                      <TableContentTypography variant="body1">
+                        Jothi Vallalar Higher Sec.School
+                      </TableContentTypography>
+                    </TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>
+                      <TableHeadingTypography variant="body1">Percentage :</TableHeadingTypography>
+                    </TableCell>
+                    <TableCell>
+                      <TableContentTypography variant="body1">78%</TableContentTypography>
+                    </TableCell>
+                  </TableRow>
+                </StyledTable>
+              </div>
+            </CustomPaper>
+          </div>
+        </div>
+        <div className="wrapContainerReverse">
+          <div className="sslc">
+            <CustomPaper>
+              <div className="contentDiv">
+                <StyledTable className="educationTable">
+                  <TableRow>
+                    <TableCell>
+                      <TableHeadingTypography variant="body1">Year :</TableHeadingTypography>
+                    </TableCell>
+                    <TableCell>
+                      <TableContentTypography variant="body1">2013 - 2014</TableContentTypography>
+                    </TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>
+                      <TableHeadingTypography variant="body1">Standard :</TableHeadingTypography>
+                    </TableCell>
+                    <TableCell>
+                      <TableContentTypography variant="body1">10th</TableContentTypography>
+                    </TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>
+                      <TableHeadingTypography variant="body1">School :</TableHeadingTypography>
+                    </TableCell>
+                    <TableCell>
+                      <TableContentTypography variant="body1">
+                        Amala Higher Sec.School
+                      </TableContentTypography>
+                    </TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>
+                      <TableHeadingTypography variant="body1">Percentage :</TableHeadingTypography>
+                    </TableCell>
+                    <TableCell>
+                      <TableContentTypography variant="body1">86%</TableContentTypography>
+                    </TableCell>
+                  </TableRow>
+                </StyledTable>
+              </div>
+            </CustomPaper>
+          </div>
+          <div style={{ width: '480px' }}>
+            <CustomPaper>
+              <div className="contentDiv">
+                <CustomCard>
+                  <CardHeader title="SSLC" />
+                  <CardContent>
+                    <CustomTypography>
+                      During the period of 2013 to 2014, I successfully completed my SSLC (10th
+                      grade) education, marking a significant milestone in my academic journey.
+                    </CustomTypography>
+                  </CardContent>
+                </CustomCard>
+              </div>
+            </CustomPaper>
+          </div>
+        </div>
       </div>
-      <Menus />
+      <div style={{ height: 60 }}></div>
+      <Footer />
     </div>
   );
 };

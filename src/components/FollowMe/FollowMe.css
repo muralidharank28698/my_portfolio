@@ -1,24 +1,53 @@
 .Container {
-  width: 94%;
-  top: 80px;
-  position: absolute;
-  height: max-content;
-  /* border: 1px solid red; */
+  width: 100%;
 }
 .main_container {
-  /* margin: 28px 6px 0px 6px; */
-  /* margin: 90px auto; */
-  /* margin: 30px auto; */
-  /* padding: 8px; */
-  /* border: none; */
-  /* border: 1px solid red; */
-  /* justify-content: center; */
-  /* padding: 30px; */
-  margin: 60px auto;
-  width: 86%;
+  padding: 8px;
+  margin: 5.3rem auto;
+  width: 76%;
 }
-
 .cardTitle {
   display: flex;
   justify-content: space-between;
+}
+.topContainer {
+  margin-top: 2px;
+  display: flex;
+  width: '100%';
+}
+.main_container .followHeading {
+  color: #0f2e66;
+  font-weight: bold;
+  font-size: 23px;
+  letter-spacing: normal;
+  align-items: center;
+  margin-left: 10px;
+}
+.topContainer .linkCard {
+  width: 50%;
+  padding: 10px;
+}
+/* media query */
+@media screen and (max-width: 1225px) {
+  .main_container {
+    width: 98%;
+  }
+}
+@media screen and (max-width: 880px) {
+  .topContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .topContainer .linkCard {
+    width: 70%;
+  }
+  .main_container .followHeading {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 605px) {
+  .topContainer .linkCard {
+    width: 98%;
+  }
 }

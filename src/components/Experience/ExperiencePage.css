@@ -1,0 +1,18 @@
+.experienceContainer {
+  width: 85%;
+  margin: 6rem auto;
+}
+.experienceContainer .ExperienceHeading {
+  color: #0f2e66;
+  font-weight: bold;
+  font-size: 23px;
+  letter-spacing: normal;
+  align-items: center;
+  margin-bottom: 18px;
+}
+.experienceContainer .projectsDes {
+  color: #0f2e66;
+  font-size: 16px;
+  padding: 20px;
+  text-align: justify;
+}

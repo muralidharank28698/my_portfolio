@@ -1,0 +1,128 @@
+.container {
+  width: 100%;
+}
+.skillsContainer {
+  background: linear-gradient(
+    to bottom,
+    #000000 0%,
+    rgb(116, 123, 190) 0%,
+    rgba(255, 255, 255, 0.7) 50%
+  );
+  height: 100vh;
+}
+.tableData {
+  padding: 6px;
+  margin-top: 20px;
+}
+.table {
+  width: 80%;
+  border: none;
+  color: #a7afbe;
+  font-size: 18px;
+  margin: auto;
+}
+.table td {
+  padding: 1.5px;
+  text-align: right;
+  color: rgb(42, 173, 239);
+}
+.table th {
+  text-align: left;
+}
+.technicalSkills {
+  display: flex;
+  margin-top: 18px;
+  margin-bottom: 18px;
+  justify-content: space-between;
+  color: #0f2e66;
+}
+.experienceTopData {
+  width: 380px;
+  padding: 6px;
+  border-radius: 2px;
+}
+
+.center_part_bottom {
+  padding: 6px;
+  margin: 6rem auto;
+  width: 80%;
+}
+:root {
+  --main-color: #00cfe8;
+  --second-color: #1b1b1b;
+  --third-color: #d4d4d4;
+  --bg-color: #ebebeb;
+  --main-grid: repeat(auto-fill, minmax(300px, 1fr));
+  --main-padding: 40px;
+}
+.skills {
+  padding-top: var(--main-padding);
+  padding-bottom: var(--main-padding);
+}
+.skills span {
+  color: var(--main-color);
+}
+.skills .skill-card {
+  flex-direction: row;
+  display: flex;
+  justify-content: center;
+  margin-top: 35px;
+  padding: 18px;
+}
+.skills .skill-card .card {
+  width: 360px;
+  height: 200px;
+  padding: 18px;
+  border: 1px solid var(--main-color);
+  color: var(--third-color);
+  position: relative;
+  margin: 10px;
+  box-shadow: 0 2px 16px 0 rgba(33, 43, 54, 0.08);
+  border-radius: 5px;
+}
+.skills .card p {
+  line-height: 1.7;
+  font-size: 16px;
+  color: var(--third-color);
+}
+.skills .card .image {
+  font-size: 42px;
+  width: 60px;
+  height: 60px;
+  color: var(--second-color);
+  background-color: rgb(7 10 14);
+  position: absolute;
+  top: calc(-60px / 2);
+  transform: rotate(45deg);
+  left: 40%;
+  transition: 1s;
+  border-radius: 50%;
+}
+.skills .card .image img {
+  width: 100%;
+  height: 100%;
+  padding: 8px;
+}
+.skills .card:hover .image {
+  transform: rotate(0deg);
+}
+.skills .card:hover h4 {
+  color: var(--second-color);
+}
+/* media query  */
+@media screen and (max-width: 1225px) {
+  .skills .skill-card {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 38px;
+    /* padding: 10px; */
+  }
+}
+@media screen and (max-width: 840px) {
+  .skills .skill-card {
+    display: grid;
+    grid-template-columns: auto;
+    /* gap: 10px; */
+    /* padding: 10px; */
+  }
+}

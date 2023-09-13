@@ -1,30 +1,31 @@
 import React from 'react';
 import './FollowMe.css';
-import Menus from '../MenuSide/Menus';
 import { Typography } from '@mui/material';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import Grid from '@mui/material/Grid';
 import CardActions from '@mui/material/CardActions';
 import Button from '@mui/material/Button';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import { styled } from '@mui/material/styles';
-import Paper from '@mui/material/Paper';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import Divider from '@mui/material/Divider';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import Link from '@mui/material/Link';
 import { AllData } from '../../AllData';
+import Headerpage from '../Header/Headerpage';
+import Footer from '../Footer';
 
 const CustomCard = styled(Card)(({ theme }) => ({
   '&.MuiCard-root': {
-    marginTop: 20,
-    boxShadow:
-      'box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;',
+    marginTop: 16,
+    background: 'none',
+    paddingTop: 0,
+    boxShadow: 'rgba(21,183,255) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px',
     '& .MuiTypography-root': {
       '&.MuiTypography-body1': {
-        color: '#9caabd',
-        fontFamily: 'cursive',
+        color: '#707887',
+        fontSize: 16,
+        lineHeight: 1.6,
       },
     },
     '& .MuiCardActions-root': {
@@ -34,28 +35,22 @@ const CustomCard = styled(Card)(({ theme }) => ({
     },
     '& .MuiLink-root': {
       color: '#eee',
-      fontSize: 12,
-      // textTransform: 'capitalize',
-      // fontFamily: 'cursive',
+      fontSize: 14,
+      textTransform: 'capitalize',
     },
   },
 }));
-
 export const CustomTypography = styled(Typography)(({ theme }) => ({
   '&.MuiTypography-root': {
     color: '#0f2e66',
-    // borderBottom: '1px solid #eee',
     display: 'inline-block',
-    // borderRadius: 7,
-    // fontWeight: '500',
+    borderRadius: 3,
     fontWeight: 'bold',
-    fontSize: 18,
+    fontSize: 23,
     letterSpacing: 'normal',
-    // fontFamily: 'cursive',
-    // marginBottom: 30,
+    marginLeft: 10,
   },
 }));
-
 const CustomDivider = styled(Divider)(({ theme }) => ({
   '&.MuiDivider-root': {
     marginBottom: 18,
@@ -64,10 +59,9 @@ const CustomDivider = styled(Divider)(({ theme }) => ({
 }));
 const CardTitle = styled(Typography)(({ theme }) => ({
   '&.MuiTypography-root': {
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: 'bold',
     color: 'orange',
-    fontFamily: 'cursive',
     letterSpacing: 'normal',
   },
 }));
@@ -75,15 +69,18 @@ const CardTitle = styled(Typography)(({ theme }) => ({
 const FollowMe = () => {
   return (
     <div className="Container">
+      <Headerpage />
       <div className="main_container">
-        <CustomTypography variant="h6">{AllData?.followMePage?.followMePageTitle}</CustomTypography>
-        <Grid container rowSpacing={3} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-          <Grid item xs={6}>
+        <Typography variant="h6" className="followHeading">
+          {AllData?.followMePage?.followMePageTitle}
+        </Typography>
+        <div className="topContainer">
+          <div className="linkCard">
             <CustomCard>
               <CardContent>
                 <div className="cardTitle">
                   <CardTitle variant="h6">{AllData?.followMePage?.followMeTitle?.github}</CardTitle>
-                  <GitHubIcon color="secondary" fontSize="medium" />
+                  <GitHubIcon fontSize="large" />
                 </div>
                 <CustomDivider variant="fullWidth" className="divider" />
                 <Typography>{AllData?.followMePage?.followMeDescription?.githubDes}</Typography>
@@ -101,15 +98,15 @@ const FollowMe = () => {
                 </Button>
               </CardActions>
             </CustomCard>
-          </Grid>
-          <Grid item xs={6}>
+          </div>
+          <div className="linkCard">
             <CustomCard>
               <CardContent>
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                   <CardTitle variant="h6">
                     {AllData?.followMePage?.followMeTitle?.linkedIn}
                   </CardTitle>
-                  <LinkedInIcon color="info" fontSize="medium" />
+                  <LinkedInIcon fontSize="large" />
                 </div>
                 <CustomDivider variant="fullWidth" />
                 <Typography>{AllData?.followMePage?.followMeDescription?.linkedInDes}</Typography>
@@ -131,16 +128,18 @@ const FollowMe = () => {
                 </Button>
               </CardActions>
             </CustomCard>
-          </Grid>
-          <Grid item xs={6}>
+          </div>
+        </div>
+        <div className="topContainer">
+          <div className="linkCard">
             <CustomCard>
               <CardContent>
                 <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                   <CardTitle variant="h6">{AllData?.followMePage?.followMeTitle?.naukri}</CardTitle>
                   <img
-                    src={require('../../assets/naukri.png')}
+                    src={require('../../assets/naukriwhite.png')}
                     alt=""
-                    style={{ width: '40px', height: '30px' }}
+                    style={{ width: '34px', height: '23px' }}
                   />
                 </div>
                 <CustomDivider variant="fullWidth" />
@@ -150,7 +149,7 @@ const FollowMe = () => {
                 <Button
                   size="small"
                   variant="contained"
-                  endIcon={<ArrowForwardIcon />}
+                  endIcon={<ArrowForwardIcon color="#eee" />}
                   color="info"
                 >
                   <Link href={AllData?.followMePage?.Urls?.naukri} underline="none" target="_blank">
@@ -159,10 +158,11 @@ const FollowMe = () => {
                 </Button>
               </CardActions>
             </CustomCard>
-          </Grid>
-        </Grid>
+          </div>
+        </div>
       </div>
-      <Menus />
+      <div style={{ height: 30 }}></div>
+      <Footer />
     </div>
   );
 };

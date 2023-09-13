@@ -1,18 +1,37 @@
 .container {
-  top: 80px;
-  position: absolute;
-  width: 94%;
+  width: 100%;
 }
 .tableContainer {
-  margin: 40px auto;
   width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 0 0 1px rgba(63, 63, 68, 0.05), 0 1px 3px 0 rgba(63, 63, 68, 0.15);
+}
+.contianerBody {
+  margin: 6rem auto;
 }
 .wrapContainer {
-  margin: 70px auto;
-  width: 90%;
+  margin: 5rem auto;
+  display: flex;
+  padding: 10px;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
-.tableContent {
-  padding: 18px;
+.wrapContainerReverse {
+  margin: 60px auto;
+  display: flex;
+  padding: 10px;
+  flex-wrap: wrap-reverse;
+  justify-content: space-evenly;
+}
+.contentDiv {
+  padding: 12px;
+  margin: auto;
+  margin-bottom: 18px;
+}
+.sslc,
+.pg,
+.ug,
+.hsc {
+  width: 480px;
+  border-right: 1px solid #a7afbe;
+  border-left: 1px solid #a7afbe;
+  border-radius: 8px;
 }
