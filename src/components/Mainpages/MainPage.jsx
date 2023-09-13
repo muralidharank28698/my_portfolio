@@ -89,7 +89,7 @@ const MainPage = () => {
             <Box>
               <CardContent>
                 <Typography className="topic">
-                  Discovering My amazing
+                  Discovering my amazing
                   <br />
                   Art Space..!
                 </Typography>
