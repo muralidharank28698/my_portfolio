@@ -71,7 +71,7 @@ const ExperiencePage = () => {
             </Typography>
             <Typography variant="h5" className="experiencePoints">
               Learned Typescript with React and Redux by creating the online shopping cart
-              application{' '}
+              application. Click the below link to view{' '}
               <span className="fullLink">
                 <Link
                   href={

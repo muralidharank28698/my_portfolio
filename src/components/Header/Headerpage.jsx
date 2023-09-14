@@ -48,9 +48,9 @@ const Headerpage = () => {
         <div style={{ display: 'flex', lineHeight: '10px' }} className="links">
           <Link href="/">
             <img
-              src={require('../../../src/assets/pf3.png')}
+              src={require('../../../src/assets/logo.png')}
               alt=""
-              style={{ width: '56px', height: '56px', marginRight: 6 }}
+              style={{ width: '58px', height: '58px', marginRight: 6 }}
               className="logoImage"
             />
           </Link>
