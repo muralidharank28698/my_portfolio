@@ -74,23 +74,19 @@ const ExperiencePage = () => {
               application. Click the below link to view{' '}
               <span className="fullLink">
                 <Link
-                  href={
-                    'https://github.com/muralidharank28698/ShoppingCartUsingReactReduxTypescript'
-                  }
+                  href={'https://github.com/muralidharank28698/TypescriptShoppingCart'}
                   target="_blank"
                   style={{ fontSize: 14 }}
                 >
-                  https://github.com/muralidharank28698/ShoppingCartUsingReactReduxTypescript
+                  https://github.com/muralidharank28698/TypescriptShoppingCart
                 </Link>
               </span>
               <span className="linkName">
                 <Link
-                  href={
-                    'https://github.com/muralidharank28698/ShoppingCartUsingReactReduxTypescript'
-                  }
+                  href={'https://github.com/muralidharank28698/TypescriptShoppingCart'}
                   target="_blank"
                 >
-                  ShoppingCartUsingReactReduxTypescript
+                  TypescriptShoppingCart
                 </Link>
               </span>
             </Typography>
