@@ -38,11 +38,7 @@ const Aboutpage = () => {
       <div className="aboutContainer">
         <div className="wrapper">
           <div className="wrapperImage">
-            <img
-              src={require('../../assets/006.png')}
-              alt=""
-              style={{ width: '400px', height: '360px' }}
-            />
+            <img src={require('../../assets/006.png')} alt="" />
           </div>
           <CustomCard>
             <div>
@@ -64,7 +60,6 @@ const Aboutpage = () => {
                 </Typography>
               </CardActions>
               <Divider style={{ width: '28%', margin: 'auto', borderColor: '#888f99' }} />
-              {/* <CardContent style={{ textAlign: 'center' }}> */}
               <CardContent>
                 <Typography variant="body2" color="text.secondary">
                   No 89, Marriyamman Kovil street, Monnaiyampet,

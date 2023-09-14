@@ -60,6 +60,7 @@ const TableHeadingTypography = styled(Typography)(({ theme }) => ({
     textTransform: 'uppercase',
     fontWeight: 'bold',
     letterSpacing: 1.3,
+    width: 'max-content',
   },
 }));
 const TableContentTypography = styled(Typography)(({ theme }) => ({

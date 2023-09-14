@@ -29,8 +29,10 @@ const LanguageTypography = styled(Typography)(({ theme }) => ({
 const CustomSkillsPaper = styled(Paper)(({ theme }) => ({
   '&.MuiPaper-root': {
     background: 'none',
-    width: '48%',
-    height: '100%',
+    width: '100%',
+    height: 200,
+    margin: 10,
+    padding: 16,
     boxShadow: 'none',
   },
 }));
@@ -223,60 +225,50 @@ const SkillsExperience = () => {
           </div>
         </div>
       </div>
-      <div style={{ width: '60%', margin: '18px auto' }}>
-        <Box
-          sx={{
-            display: 'flex',
-            '& > :not(style)': {
-              m: 1,
-              height: 128,
-            },
-          }}
-        >
-          <CustomSkillsPaper>
-            <CustomSkillsTypographyHeading>Personal Details</CustomSkillsTypographyHeading>
-            <div className="tableData">
-              <table className="table">
-                <tr>
-                  <th>Residence :</th>
-                  <td>{AllData?.leftSideData?.tableData?.residence}</td>
-                </tr>
-                <tr>
-                  <th>City :</th>
-                  <td>{AllData?.leftSideData?.tableData?.city}</td>
-                </tr>
-                <tr>
-                  <th>Age :</th>
-                  <td>{AllData?.leftSideData?.tableData?.age}</td>
-                </tr>
-              </table>
-            </div>
-          </CustomSkillsPaper>
-          <Divider orientation="vertical" style={{ borderColor: '#8d9cba' }} />
-          <CustomSkillsPaper>
-            <CustomSkillsTypographyHeading>Languages Known</CustomSkillsTypographyHeading>
-            <Paper style={{ background: 'none', boxShadow: 'none' }}>
-              <Box sx={{ display: 'flex', justifyContent: 'space-evenly', marginTop: '26px' }}>
-                <CircularProgressWithLabel value="100" />
-                <CircularProgressWithLabel value="90" />
-              </Box>
-              <Box
-                sx={{
-                  display: 'flex',
-                  justifyContent: 'space-evenly',
-                }}
-              >
-                <LanguageTypography>
-                  {AllData?.leftSideData?.languageKnown?.tamil}
-                </LanguageTypography>
-                <LanguageTypography style={{ marginRight: -5 }}>
-                  {AllData?.leftSideData?.languageKnown?.english}
-                </LanguageTypography>
-              </Box>
-            </Paper>
-          </CustomSkillsPaper>
-        </Box>
+      {/* <div style={{ width: '70%', margin: 'auto' }}> */}
+      <div className="detAndLanguage">
+        <CustomSkillsPaper>
+          <CustomSkillsTypographyHeading>Personal Details</CustomSkillsTypographyHeading>
+          <div className="tableData">
+            <table className="table">
+              <tr>
+                <th>Residence :</th>
+                <td>{AllData?.leftSideData?.tableData?.residence}</td>
+              </tr>
+              <tr>
+                <th>City :</th>
+                <td>{AllData?.leftSideData?.tableData?.city}</td>
+              </tr>
+              <tr>
+                <th>Age :</th>
+                <td>{AllData?.leftSideData?.tableData?.age}</td>
+              </tr>
+            </table>
+          </div>
+        </CustomSkillsPaper>
+        <Divider orientation="vertical" style={{ borderColor: '#8d9cba' }} />
+        <CustomSkillsPaper>
+          <CustomSkillsTypographyHeading>Languages Known</CustomSkillsTypographyHeading>
+          <Paper style={{ background: 'none', boxShadow: 'none' }}>
+            <Box sx={{ display: 'flex', justifyContent: 'space-evenly', marginTop: '26px' }}>
+              <CircularProgressWithLabel value="100" />
+              <CircularProgressWithLabel value="90" />
+            </Box>
+            <Box
+              sx={{
+                display: 'flex',
+                justifyContent: 'space-evenly',
+              }}
+            >
+              <LanguageTypography>{AllData?.leftSideData?.languageKnown?.tamil}</LanguageTypography>
+              <LanguageTypography style={{ marginRight: -5 }}>
+                {AllData?.leftSideData?.languageKnown?.english}
+              </LanguageTypography>
+            </Box>
+          </Paper>
+        </CustomSkillsPaper>
       </div>
+      {/* </div> */}
       <div style={{ height: 60 }}></div>
       <Footer />
     </div>

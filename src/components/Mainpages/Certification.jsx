@@ -129,8 +129,9 @@ const Certification = () => {
                 Title: I will add in future
               </Typography>
               <Typography variant="h6" color="text.secondary">
-                I have to plan to learn some other courses in udemy platform. Once I complete the
-                course, I will add the certificate here in future...
+                I have to plan to learn some other courses to improve my professional career in
+                udemy platform. Once I complete the course, I will add the certificate here in
+                future...
               </Typography>
             </CardContent>
           </CardActionArea>
@@ -147,18 +148,16 @@ const Certification = () => {
           aria-labelledby="customized-dialog-title"
           open={open}
         >
-          <DialogTitle>
-            <Typography variant="h4">
-              Microfrontends with React: A complete Developer's Guide
-            </Typography>
-          </DialogTitle>
+          <Typography variant="h5" style={{ margin: 23 }}>
+            Microfrontends with React: A complete Developer's Guide
+          </Typography>
           <IconButton
             aria-label="close"
             onClick={handleClose}
             sx={{
               position: 'absolute',
-              right: 8,
-              top: 8,
+              right: 6,
+              top: 11,
               fontSize: 108,
               color: (theme) => theme.palette.grey[500],
             }}

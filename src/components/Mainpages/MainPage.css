@@ -4,11 +4,11 @@
 .topContainerContent {
   min-height: 100vh;
   width: 100%;
-  background-size: contain;
+  background-size: cover;
   background: linear-gradient(to bottom, #363535 0%, rgb(5 6 7) 0%, rgb(1 46 73 / 70%) 90%),
     url('../../assets/mainPageBg.png');
   background-repeat: no-repeat;
-  background-position: center;
+  /* background-position: center; */
 }
 .center_part_top {
   margin: 6rem auto;
@@ -31,29 +31,170 @@
   padding: 10px;
 }
 .individualExperience {
-  width: 328px;
+  width: 320px;
   border-left: 5px solid;
   border-image: linear-gradient(to bottom, #6ce608, #ec06fc) 1;
   margin: 30px;
 }
 .certification {
-  width: 90%;
-  margin: 2rem auto;
+  width: 100%;
+  margin-top: auto;
+  padding: 20px;
+  background-color: #f9fafb;
 }
 .certificateCards {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 .certification .title {
   color: #0f2e66;
   font-weight: bold;
-  font-size: 23px;
+  font-size: 26px;
   letter-spacing: normal;
   align-items: center;
-  margin-bottom: 18px;
+  margin-top: 1rem;
+  margin-bottom: 1.2rem;
+  text-align: center;
 }
 .certificateView {
   width: 100%;
   height: 100%;
   margin-bottom: -20px;
+}
+.topContent {
+  display: none;
+}
+.experienceData .experienceDataContentRight .exTitle {
+  color: #0f2e66;
+  margin: 20px 0px 18px 28px;
+  font-weight: bold;
+  font-size: 46px;
+  /* line-height: 3.6rem; */
+}
+.experienceColumnLeft {
+  display: flex;
+  /* justify-content: space-between; */
+}
+
+/* media query */
+@media screen and (max-width: 1087px) {
+  .center_part_top {
+    display: none;
+  }
+}
+@media screen and (max-width: 840px) {
+  .certificateCards {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 38px;
+  }
+}
+@media screen and (max-width: 680px) {
+  .certificateCards {
+    display: grid;
+    grid-template-columns: auto;
+  }
+}
+@media screen and (max-width: 1086px) {
+  .topContent {
+    display: block;
+    text-align: center;
+    margin: 4rem auto;
+    height: auto;
+    padding: 3rem;
+  }
+  .topContent .topContentContainer .topic {
+    color: #ffffff;
+    font-size: 6rem;
+    font-weight: bold;
+    text-shadow: 1px 2px 3px rgb(5, 188, 255);
+  }
+  .topContent .topContentContainer .objective {
+    color: #c6cacd;
+    font-size: 1.6rem;
+    margin-top: 23px;
+    line-height: 2.8rem;
+  }
+  .topContent .topContentContainer .role {
+    color: #c6cacd;
+    font-size: 1.6rem;
+    margin-top: 23px;
+    border-bottom: 1px solid #c6cacd;
+    display: inline-block;
+  }
+  .topContent .topContentContainer .btn {
+    align-items: center;
+  }
+  .experienceData {
+    flex-direction: column;
+    margin: auto;
+    align-items: center;
+  }
+  .experienceDataContentRight {
+    width: 90%;
+  }
+  .experienceColumnLeft {
+    align-items: center;
+  }
+  .experienceData .experienceColumn {
+    display: flex;
+    flex-direction: column;
+    margin: 3rem auto;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  .experienceData .experienceDataContentRight .exTitle {
+    text-align: center;
+    margin: 0;
+    font-size: 3rem;
+  }
+}
+@media screen and (max-width: 666px) {
+  .topContent {
+    height: auto;
+    margin: 4rem auto;
+  }
+  .topContent .topContentContainer .topic {
+    font-size: 4rem;
+  }
+  .topContent .topContentContainer .objective {
+    font-size: 1.4rem;
+    margin-top: 18px;
+  }
+  .topContent .topContentContainer .role {
+    /* font-size: 1.4rem; */
+    margin-top: 14px;
+  }
+}
+@media screen and (max-width: 478px) {
+  .topContent {
+    background: #070a0e;
+  }
+}
+/* @media screen and (max-width: 990px) {
+  
+} */
+/*
+@media screen and (max-width: 955px) {
+  .experienceData .experienceColumn {
+    margin-left: 30px;
+  }
+} */
+/* @media screen and (max-width: 863px) {
+  .experienceData .experienceColumn {
+    margin-left: 10px;
+  }
+} */
+@media screen and (max-width: 800px) {
+  .experienceColumnLeft {
+    flex-direction: column;
+    display: flex;
+    font-size: 12px;
+    margin: auto;
+    /* background-color: red; */
+  }
+  .individualExperience {
+    width: 200px;
+  }
 }

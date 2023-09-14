@@ -10,6 +10,7 @@ import { AllData } from '../../AllData';
 import Headerpage from '../Header/Headerpage';
 import Footer from '../Footer';
 import Certification from './Certification';
+import { Divider } from '@mui/material';
 
 const CustomCard = styled(Card)(({ theme }) => ({
   '&.MuiCard-root': {
@@ -29,6 +30,7 @@ const CustomCard = styled(Card)(({ theme }) => ({
         padding: 12,
         textAlign: 'left',
         fontWeight: 'bold',
+        textShadow: '1px 2px 3px rgb(5, 188, 255)',
       },
       '& .objective': {
         color: '#c6cacd',
@@ -104,6 +106,26 @@ const MainPage = () => {
             </Box>
           </CustomCard>
         </div>
+        <div className="topContent">
+          <div className="topContentContainer">
+            <div>
+              <CardContent>
+                <Typography className="topic">
+                  Discovering my amazing
+                  <br />
+                  Art Space..!
+                </Typography>
+                <Typography className="objective">{AllData?.certerPart?.objective}</Typography>
+                <Typography className="role">{AllData?.certerPart?.role}</Typography>
+              </CardContent>
+              <div className="btn">
+                <Button size="large" variant="contained" style={{ color: '#ffffff' }}>
+                  Explore now
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div className="experienceData">
         <div className="experienceDataContentLeft">
@@ -114,65 +136,60 @@ const MainPage = () => {
           />
         </div>
         <div className="experienceDataContentRight">
-          <Typography
-            variant="h2"
-            style={{
-              margin: '20px 0px 18px 28px',
-              color: '#0f2e66',
-              fontWeight: 'bold',
-              fontSize: 46,
-              lineHeight: 1.4,
-            }}
-          >
+          <Typography variant="h2" className="exTitle">
             Discover my experience <br />
             and projects...
           </Typography>
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              marginRight: '8rem',
-            }}
-          >
-            <div className="individualExperience">
-              <ExperienceCustomTypographyHeading>
-                {AllData?.certerPart?.reactDeveloper}
-              </ExperienceCustomTypographyHeading>
-              <ExperienceCustomTypography>
-                {AllData?.certerPart?.experience}
-              </ExperienceCustomTypography>
+          <div className="experienceColumn">
+            <div
+              // style={{
+              //   // display: 'flex',
+              //   // justifyContent: 'space-between',
+              //   // marginRight: '8rem',
+              // }}
+              className="experienceColumnLeft"
+            >
+              <div className="individualExperience">
+                <ExperienceCustomTypographyHeading>
+                  {AllData?.certerPart?.reactDeveloper}
+                </ExperienceCustomTypographyHeading>
+                <ExperienceCustomTypography>
+                  {AllData?.certerPart?.experience}
+                </ExperienceCustomTypography>
+              </div>
+              <div className="individualExperience">
+                <ExperienceCustomTypographyHeading>
+                  {AllData?.certerPart?.projects}
+                </ExperienceCustomTypographyHeading>
+                <ExperienceCustomTypography>
+                  {AllData?.certerPart?.projectDescription}
+                </ExperienceCustomTypography>
+              </div>
             </div>
-            <div className="individualExperience">
-              <ExperienceCustomTypographyHeading>
-                {AllData?.certerPart?.projects}
-              </ExperienceCustomTypographyHeading>
-              <ExperienceCustomTypography>
-                {AllData?.certerPart?.projectDescription}
-              </ExperienceCustomTypography>
-            </div>
-          </div>
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              marginRight: '8rem',
-            }}
-          >
-            <div className="individualExperience">
-              <ExperienceCustomTypographyHeading>
-                {AllData?.certerPart?.hackerRank}
-              </ExperienceCustomTypographyHeading>
-              <ExperienceCustomTypography>
-                {AllData?.certerPart?.hackerRankDes}
-              </ExperienceCustomTypography>
-            </div>
-            <div className="individualExperience">
-              <ExperienceCustomTypographyHeading>
-                {AllData?.certerPart?.deployProjects}
-              </ExperienceCustomTypographyHeading>
-              <ExperienceCustomTypography>
-                {AllData?.certerPart?.deployProjectsDes}
-              </ExperienceCustomTypography>
+            <div
+              // style={{
+              //   display: 'flex',
+              //   justifyContent: 'space-between',
+              //   marginRight: '8rem',
+              // }}
+              className="experienceColumnLeft"
+            >
+              <div className="individualExperience">
+                <ExperienceCustomTypographyHeading>
+                  {AllData?.certerPart?.hackerRank}
+                </ExperienceCustomTypographyHeading>
+                <ExperienceCustomTypography>
+                  {AllData?.certerPart?.hackerRankDes}
+                </ExperienceCustomTypography>
+              </div>
+              <div className="individualExperience">
+                <ExperienceCustomTypographyHeading>
+                  {AllData?.certerPart?.deployProjects}
+                </ExperienceCustomTypographyHeading>
+                <ExperienceCustomTypography>
+                  {AllData?.certerPart?.deployProjectsDes}
+                </ExperienceCustomTypography>
+              </div>
             </div>
           </div>
         </div>
@@ -181,8 +198,10 @@ const MainPage = () => {
         <Typography variant="h3" className="title">
           Certification
         </Typography>
+        <Divider style={{ width: '78%', margin: 'auto' }} />
         <Certification />
       </div>
+      <div style={{ height: 60 }}></div>
       <Footer />
     </div>
   );

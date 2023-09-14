@@ -38,7 +38,7 @@
   color: #ffffff;
 }
 /* media query */
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: 1085px) {
   .headerContainer .menuText {
     display: none;
   }
@@ -54,7 +54,7 @@
     line-height: 3rem !important;
   }
   .titleLogoContainer {
-    margin-left: -5rem;
+    margin-left: -8rem;
   }
   .logoImage {
     display: none;
@@ -64,6 +64,6 @@
     color: rgb(222, 215, 215);
     display: block;
     margin-top: 20px;
-    margin-right: -6rem !important;
+    margin-right: -8rem !important;
   }
 }

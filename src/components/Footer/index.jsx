@@ -6,6 +6,8 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import Link from '@mui/material/Link';
+import { AllData } from '../../AllData';
 
 const CustomTypography = styled(Typography)(({ theme }) => ({
   '&.MuiTypography-root': {
@@ -29,8 +31,12 @@ const Footer = () => {
       </div>
       <div className="footerIcons">
         <div className="icons">
-          <LinkedInIcon color="info" style={{ fontSize: 28 }} />
-          <GitHubIcon color="info" style={{ fontSize: 28 }} />
+          <Link href={AllData?.followMePage.Urls.linkedIn} target="_blank">
+            <LinkedInIcon color="info" style={{ fontSize: 28 }} />
+          </Link>
+          <Link href={AllData?.followMePage.Urls.github} target="_blank">
+            <GitHubIcon color="info" style={{ fontSize: 28 }} />
+          </Link>
           <YouTubeIcon color="info" style={{ fontSize: 28 }} />
           <FacebookIcon color="info" style={{ fontSize: 28 }} />
         </div>

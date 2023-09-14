@@ -13,7 +13,7 @@ export const AllData = {
     },
     Urls: {
       github: 'https://github.com/muralidharank28698',
-      linkedIn: 'https://www.linkedin.com/in/muralidharan-k-90a95121a/',
+      linkedIn: 'https://www.linkedin.com/in/muralidharank280698/',
       naukri: 'https://www.naukri.com/mnjuser/profile?id=&altresid',
     },
   },
@@ -34,7 +34,7 @@ export const AllData = {
     tableData: {
       residence: 'Puducherry',
       city: 'Puducherry',
-      age: '24',
+      age: '25',
     },
   },
   certerPart: {

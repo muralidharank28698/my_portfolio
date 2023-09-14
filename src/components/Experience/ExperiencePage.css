@@ -15,4 +15,44 @@
   font-size: 16px;
   padding: 20px;
   text-align: justify;
+  line-height: 2.8rem;
+}
+.projectsContent {
+  display: flex;
+  justify-content: center;
+}
+.experienceContainer .experienceTitle {
+  color: #0f2e66;
+  font-size: 18px;
+  font-weight: bold;
+}
+.experienceContainer .experiencePoints {
+  margin-bottom: 4px;
+  padding: 6px;
+  font-size: 17px;
+  color: #0f2e66;
+}
+.linkName {
+  display: none;
+}
+
+/* media query */
+@media screen and (max-width: 882px) {
+  .projectsContent {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 854px) {
+  .experienceContainer .experienceTitle {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 655px) {
+  .fullLink {
+    display: none;
+  }
+  .linkName {
+    display: block;
+    font-size: 14px;
+  }
 }

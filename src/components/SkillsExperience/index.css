@@ -17,7 +17,7 @@
 .table {
   width: 80%;
   border: none;
-  color: #a7afbe;
+  color: #02164b;
   font-size: 18px;
   margin: auto;
 }
@@ -109,20 +109,41 @@
 .skills .card:hover h4 {
   color: var(--second-color);
 }
+.detAndLanguage {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  align-items: center;
+  width: 70%;
+}
 /* media query  */
 @media screen and (max-width: 1225px) {
   .skills .skill-card {
     display: grid;
     grid-template-columns: auto auto;
     gap: 38px;
-    /* padding: 10px; */
+  }
+  .detAndLanguage {
+    width: 98%;
   }
 }
 @media screen and (max-width: 840px) {
   .skills .skill-card {
     display: grid;
     grid-template-columns: auto;
-    /* gap: 10px; */
-    /* padding: 10px; */
+  }
+}
+@media screen and (max-width: 395px) {
+  .skills .skill-card .card {
+    width: auto;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 628px) {
+  .detAndLanguage {
+    flex-direction: column;
+    width: auto;
+    margin: 10px;
   }
 }

@@ -91,7 +91,7 @@ const Headerpage = () => {
               {AllData?.header?.mailId}
             </Link>
             <br />
-            {AllData?.header?.phoneNO}
+            <span style={{ color: 'rgb(3 225 255)' }}>{AllData?.header?.phoneNO}</span>
           </Typography>
         </div>
         <div className="menuIcon">
