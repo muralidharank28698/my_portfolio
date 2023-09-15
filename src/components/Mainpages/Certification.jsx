@@ -8,11 +8,11 @@ import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import CardMedia from '@mui/material/CardMedia';
 import { CardActionArea } from '@mui/material';
-import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import Dialog from '@mui/material/Dialog';
+import Divider from '@mui/material/Divider';
 
 const CustomCertificateCard = styled(Card)(({ theme }) => ({
   '&.MuiCard-root': {
@@ -32,8 +32,9 @@ const CertificationView = styled(Dialog)(({ theme }) => ({
     padding: theme.spacing(1),
   },
   '& .MuiDialog-paper': {
-    maxWidth: 1000,
-    height: 500,
+    // height: 'auto',
+    maxWidth: 760,
+    display: 'block',
   },
   '& .MuiDialogContent-root': {
     padding: 0,
@@ -148,7 +149,7 @@ const Certification = () => {
           aria-labelledby="customized-dialog-title"
           open={open}
         >
-          <Typography variant="h5" style={{ margin: 23 }}>
+          <Typography variant="h5" style={{ margin: '18px' }}>
             Microfrontends with React: A complete Developer's Guide
           </Typography>
           <IconButton
@@ -164,6 +165,7 @@ const Certification = () => {
           >
             <CloseIcon />
           </IconButton>
+          <Divider style={{ width: '95%', margin: 'auto' }} />
           <DialogContent dividers>
             <img
               src={require('../../assets/certificate.jpg')}
