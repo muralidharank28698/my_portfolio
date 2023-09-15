@@ -91,6 +91,18 @@ const ExperiencePage = () => {
               </span>
             </Typography>
             <Typography variant="h5" className="experiencePoints">
+              Deployed URL Link{' '}
+              <span className="">
+                <Link
+                  href={'https://shopping-cart-using-typescript.vercel.app/'}
+                  target="_blank"
+                  style={{ fontSize: 14 }}
+                >
+                  https://shopping-cart-using-typescript.vercel.app/
+                </Link>
+              </span>
+            </Typography>
+            <Typography variant="h5" className="experiencePoints">
               Learned to create reusable React components
             </Typography>
             <Typography variant="h5" className="experiencePoints">
