@@ -49,6 +49,7 @@ const Aboutpage = () => {
                 Wow, a whole page just about me...!
               </Typography>
               <CardHeader title="About me" subheader="June 28, 1998" />
+              <Typography>Age : 25</Typography>
               <CardActions>
                 <Typography variant="body1">
                   Welcome to the "About" page of my portfolio, where I invite you to learn more

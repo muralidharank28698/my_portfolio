@@ -152,8 +152,7 @@ const SkillsExperience = () => {
               <BorderLinearProgress variant="determinate" value={82} />
             </div>
           </div>
-        </div>
-        <div class="skill-card">
+          {/* <div class="skill-card"> */}
           <div class="card">
             <div className="image">
               <img src={require('../../../src/assets/react_js.png')} alt="" className="" />
@@ -224,9 +223,65 @@ const SkillsExperience = () => {
             </div>
           </div>
         </div>
+
+        {/* </div> */}
       </div>
       {/* <div style={{ width: '70%', margin: 'auto' }}> */}
-      <div className="detAndLanguage">
+      <div className="languages">
+        <div className="languageContent">
+          <div className="languageDivPart">
+            <Typography variant="body1" className="LanguageName">
+              Tamil
+            </Typography>
+            {/* <Typography variant="body1" className="lanText">
+            Proficient in Tamil, capable of fluent communication in both written and spoken forms
+          </Typography> */}
+            <Box sx={{ width: '80%', margin: 'auto' }}>
+              <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                <Box sx={{ width: '70%', margin: 'auto' }}>
+                  <LinearProgress variant="determinate" value={100} />
+                </Box>
+                <Box sx={{ minWidth: 35 }}>
+                  <Typography variant="h5" color="text.secondary">
+                    100%
+                  </Typography>
+                </Box>
+              </Box>
+            </Box>
+          </div>
+          <Divider
+            orientation="vertical"
+            style={{
+              margin: 'auto',
+              textAlign: 'center',
+              // padding: 10,
+            }}
+            className="separator"
+          />
+          <div className="languageDivPart">
+            <Typography variant="body1" className="LanguageName">
+              English
+            </Typography>
+            {/* <Typography variant="body1" className="lanText">
+            Fluent in English, enabling clear and effective communication in various professional
+            contexts.
+          </Typography> */}
+            <Box sx={{ width: '80%', margin: 'auto' }}>
+              <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                <Box sx={{ width: '70%', margin: 'auto' }}>
+                  <LinearProgress variant="determinate" value={85} />
+                </Box>
+                <Box sx={{ minWidth: 35 }}>
+                  <Typography variant="h5" color="text.secondary">
+                    85%
+                  </Typography>
+                </Box>
+              </Box>
+            </Box>
+          </div>
+        </div>
+      </div>
+      {/* <div className="detAndLanguage">
         <CustomSkillsPaper>
           <CustomSkillsTypographyHeading>Personal Details</CustomSkillsTypographyHeading>
           <div className="tableData">
@@ -267,9 +322,9 @@ const SkillsExperience = () => {
             </Box>
           </Paper>
         </CustomSkillsPaper>
-      </div>
+      </div> */}
       {/* </div> */}
-      <div style={{ height: 60 }}></div>
+      <div style={{ height: 80 }}></div>
       <Footer />
     </div>
   );
