@@ -2,7 +2,8 @@ import React from 'react';
 import './index.css';
 import { Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import FacebookIcon from '@mui/icons-material/Facebook';
+// import FacebookIcon from '@mui/icons-material/Facebook';
+import TwitterIcon from '@mui/icons-material/Twitter';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -32,13 +33,14 @@ const Footer = () => {
       <div className="footerIcons">
         <div className="icons">
           <Link href={AllData?.followMePage.Urls.linkedIn} target="_blank">
-            <LinkedInIcon color="info" style={{ fontSize: 28 }} />
+            <LinkedInIcon color="info" fontSize="large" />
           </Link>
           <Link href={AllData?.followMePage.Urls.github} target="_blank">
-            <GitHubIcon color="info" style={{ fontSize: 28 }} />
+            <GitHubIcon color="info" fontSize="large" />
           </Link>
-          <YouTubeIcon color="info" style={{ fontSize: 28 }} />
-          <FacebookIcon color="info" style={{ fontSize: 28 }} />
+          <YouTubeIcon color="info" fontSize="large" />
+          <TwitterIcon color="primary" fontSize="large" />
+          {/* <FacebookIcon color="info" style={{ fontSize: 24 }} /> */}
         </div>
       </div>
     </div>

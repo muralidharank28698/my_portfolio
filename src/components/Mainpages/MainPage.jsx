@@ -35,7 +35,7 @@ const CustomCard = styled(Card)(({ theme }) => ({
       '& .objective': {
         color: '#c6cacd',
         marginTop: 23,
-        lineHeight: 1.4,
+        lineHeight: 1.7,
         marginLeft: 16,
         fontSize: 16,
       },
@@ -198,10 +198,10 @@ const MainPage = () => {
         <Typography variant="h3" className="title">
           Certification
         </Typography>
-        <Divider style={{ width: '78%', margin: 'auto' }} />
+        {/* <Divider style={{ width: '78%', margin: 'auto' }} /> */}
         <Certification />
       </div>
-      <div style={{ height: 60 }}></div>
+      <div style={{ height: 100 }}></div>
       <Footer />
     </div>
   );

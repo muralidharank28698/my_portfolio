@@ -1,7 +1,7 @@
 export const AllData = {
   followMePage: {
     followMePageTitle: 'Follow here',
-    followLinksButtonText: 'Click here to follow',
+    followLinksButtonText: 'Click here',
     followMeTitle: { github: 'Github', linkedIn: 'LinkedIn', naukri: 'Naukri' },
     followMeDescription: {
       githubDes:

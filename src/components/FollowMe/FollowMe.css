@@ -2,7 +2,7 @@
   width: 100%;
 }
 .main_container {
-  padding: 8px;
+  padding: 23px;
   margin: 5.3rem auto;
   width: 76%;
 }
@@ -12,8 +12,10 @@
 }
 .topContainer {
   margin-top: 2px;
-  display: flex;
-  width: '100%';
+  display: grid;
+  grid-template-columns: auto auto;
+  /* gap: 38px; */
+  /* width: '100%'; */
 }
 .main_container .followHeading {
   color: #0f2e66;
@@ -24,8 +26,9 @@
   margin-left: 10px;
 }
 .topContainer .linkCard {
-  width: 50%;
+  /* width: 96%; */
   padding: 10px;
+  margin: auto;
 }
 /* media query */
 @media screen and (max-width: 1225px) {
@@ -48,6 +51,6 @@
 }
 @media screen and (max-width: 605px) {
   .topContainer .linkCard {
-    width: 98%;
+    width: 100%;
   }
 }

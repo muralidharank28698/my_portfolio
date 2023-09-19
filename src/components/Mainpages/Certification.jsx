@@ -17,12 +17,24 @@ import Divider from '@mui/material/Divider';
 const CustomCertificateCard = styled(Card)(({ theme }) => ({
   '&.MuiCard-root': {
     background: 'none',
+    maxWidth: 308,
+    boxShadow: 'none',
+    border: '1px solid #d7dddc',
     '& .MuiCardMedia-root': {
       objectFit: 'fill',
     },
+    '& .MuiTypography-h5': {
+      color: '#0f2e66',
+      fontSize: 18,
+    },
+    '& .MuiTypography-h6': {
+      color: '#707887',
+      fontSize: 12,
+    },
     '& .MuiButton-root': {
       width: '100%',
-      fontSize: 13,
+      fontSize: 12,
+      fontWeight: 'bold',
     },
   },
 }));
@@ -32,8 +44,9 @@ const CertificationView = styled(Dialog)(({ theme }) => ({
     padding: theme.spacing(1),
   },
   '& .MuiDialog-paper': {
-    // height: 'auto',
-    maxWidth: 760,
+    height: 'auto',
+    maxWidth: 700,
+    width: 700,
     display: 'block',
   },
   '& .MuiDialogContent-root': {
@@ -50,16 +63,47 @@ const CertificationView = styled(Dialog)(({ theme }) => ({
   },
   '& .MuiSvgIcon-root': {
     color: '#0f2e66',
-    marginTop: 6,
+    marginTop: 2,
     fontSize: 18,
   },
 }));
 
+const modelDialogContent = [
+  {
+    key: 'first',
+    title: "Microfrontends with React: A complete Developer's Guide",
+    imageUrl: require('../../assets/certificate.jpg'),
+  },
+  {
+    key: 'two',
+    title: 'Title:will update soon...',
+    imageUrl: require('../../assets/dummy.jpg'),
+  },
+  {
+    key: 'three',
+    title: 'Title:will update soon...',
+    imageUrl: require('../../assets/dummy.jpg'),
+  },
+];
+
 const Certification = () => {
   const [open, setOpen] = useState(false);
+  const [name, setName] = useState('');
 
-  const handleClickOpen = () => {
+  const handleClickOpen = (item) => {
     setOpen(true);
+    switch (item) {
+      case 'first':
+        setName(item);
+        break;
+      case 'two':
+        setName(item);
+        break;
+      case 'three':
+        setName(item);
+        break;
+      default:
+    }
   };
   const handleClose = () => {
     setOpen(false);
@@ -68,7 +112,7 @@ const Certification = () => {
   return (
     <>
       <div className="certificateCards">
-        <CustomCertificateCard sx={{ maxWidth: 345, margin: 2 }}>
+        <CustomCertificateCard sx={{ maxWidth: 345, margin: 3 }}>
           <CardActionArea>
             <CardMedia
               component="img"
@@ -87,12 +131,12 @@ const Certification = () => {
             </CardContent>
           </CardActionArea>
           <CardActions>
-            <Button size="small" color="primary" onClick={handleClickOpen}>
+            <Button size="small" color="primary" onClick={() => handleClickOpen('first')}>
               View
             </Button>
           </CardActions>
         </CustomCertificateCard>
-        <CustomCertificateCard sx={{ maxWidth: 345, margin: 2 }}>
+        <CustomCertificateCard sx={{ maxWidth: 345, margin: 3 }}>
           <CardActionArea>
             <CardMedia
               component="img"
@@ -102,22 +146,21 @@ const Certification = () => {
             />
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
-                Title: I will add in future
+                Title: I will add in future, will update soon...
               </Typography>
               <Typography variant="h6" color="text.secondary">
                 I have to plan to learn some other courses to improve my professional career in
-                udemy platform. Once I complete the course, I will add the certificate here in
-                future...
+                udemy platform. Once I complete, I will add the certificate...
               </Typography>
             </CardContent>
           </CardActionArea>
           <CardActions>
-            <Button size="small" color="primary">
+            <Button size="small" color="primary" onClick={() => handleClickOpen('two')}>
               View
             </Button>
           </CardActions>
         </CustomCertificateCard>
-        <CustomCertificateCard sx={{ maxWidth: 345, margin: 2 }}>
+        <CustomCertificateCard sx={{ maxWidth: 345, margin: 3 }}>
           <CardActionArea>
             <CardMedia
               component="img"
@@ -127,54 +170,55 @@ const Certification = () => {
             />
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
-                Title: I will add in future
+                Title: I will add in future, will update soon...
               </Typography>
               <Typography variant="h6" color="text.secondary">
                 I have to plan to learn some other courses to improve my professional career in
-                udemy platform. Once I complete the course, I will add the certificate here in
-                future...
+                udemy platform. Once I complete, I will add the certificate...
               </Typography>
             </CardContent>
           </CardActionArea>
           <CardActions>
-            <Button size="small" color="primary">
+            <Button size="small" color="primary" onClick={() => handleClickOpen('three')}>
               View
             </Button>
           </CardActions>
         </CustomCertificateCard>
       </div>
-      <div className="certification">
-        <CertificationView
-          onClose={handleClose}
-          aria-labelledby="customized-dialog-title"
-          open={open}
-        >
-          <Typography variant="h5" style={{ margin: '18px' }}>
-            Microfrontends with React: A complete Developer's Guide
-          </Typography>
-          <IconButton
-            aria-label="close"
-            onClick={handleClose}
-            sx={{
-              position: 'absolute',
-              right: 6,
-              top: 11,
-              fontSize: 108,
-              color: (theme) => theme.palette.grey[500],
-            }}
-          >
-            <CloseIcon />
-          </IconButton>
-          <Divider style={{ width: '95%', margin: 'auto' }} />
-          <DialogContent dividers>
-            <img
-              src={require('../../assets/certificate.jpg')}
-              alt=""
-              style={{ width: '100%', height: '100%' }}
-            />
-          </DialogContent>
-        </CertificationView>
-      </div>
+      {modelDialogContent?.map((item) =>
+        item?.key === name ? (
+          <>
+            <div className="certification">
+              <CertificationView
+                onClose={handleClose}
+                aria-labelledby="customized-dialog-title"
+                open={open}
+              >
+                <Typography variant="h5" style={{ margin: '18px' }}>
+                  {item?.title}
+                </Typography>
+                <IconButton
+                  aria-label="close"
+                  onClick={handleClose}
+                  sx={{
+                    position: 'absolute',
+                    right: 6,
+                    top: 11,
+                    fontSize: 108,
+                    color: (theme) => theme.palette.grey[500],
+                  }}
+                >
+                  <CloseIcon />
+                </IconButton>
+                <Divider style={{ width: '95%', margin: 'auto' }} />
+                <DialogContent dividers>
+                  <img src={item?.imageUrl} alt="" style={{ width: '100%', height: '100%' }} />
+                </DialogContent>
+              </CertificationView>
+            </div>
+          </>
+        ) : null,
+      )}
     </>
   );
 };

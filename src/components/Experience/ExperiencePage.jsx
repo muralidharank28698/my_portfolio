@@ -25,34 +25,34 @@ const ExperiencePage = () => {
           </AccordionSummary>
           <AccordionDetails>
             <Typography variant="h5" className="experiencePoints">
-              Developed and maintained websites for clients across various industries, focusing on
+              # Developed and maintained websites for clients across various industries, focusing on
               user-centered design.
             </Typography>
             <Typography variant="h5" className="experiencePoints">
-              Utilized HTML, CSS, and JavaScript to create visually appealing and functional web
+              # Utilized HTML, CSS, and JavaScript to create visually appealing and functional web
               interfaces.
             </Typography>
             <Typography variant="h5" className="experiencePoints">
-              Utilized React and Material UI to create dynamic and interactive user interfaces.
+              # Utilized React and Material UI to create dynamic and interactive user interfaces.
             </Typography>
             <Typography variant="h5" className="experiencePoints">
-              Utilized Redux concept for state management, enhancing application scalability and
+              # Utilized Redux concept for state management, enhancing application scalability and
               maintainability.
             </Typography>
             <Typography variant="h5" className="experiencePoints">
-              Implemented hooks concept to improve the efficiency of functional components and
+              # Implemented hooks concept to improve the efficiency of functional components and
               reduce code complexity.
             </Typography>
             <Typography variant="h5" className="experiencePoints">
-              Collaborated with designers and clients to gather requirements and translate them into
-              engaging user experiences.
+              # Collaborated with designers and clients to gather requirements and translate them
+              into engaging user experiences.
             </Typography>
             <Typography variant="h5" className="experiencePoints">
-              Managed version control using Git, facilitating efficient collaboration with team
+              # Managed version control using Git, facilitating efficient collaboration with team
               members.
             </Typography>
             <Typography variant="h5" className="experiencePoints">
-              Worked in an Agile/Scrum environment, participating in daily stand-up meetings and
+              # Worked in an Agile/Scrum environment, participating in daily stand-up meetings and
               sprint planning.
             </Typography>
           </AccordionDetails>
@@ -65,12 +65,12 @@ const ExperiencePage = () => {
           </AccordionSummary>
           <AccordionDetails>
             <Typography variant="h5" className="experiencePoints">
-              During my internship, I gained valuable expertise in web development and key
+              # During my internship, I gained valuable expertise in web development and key
               technologies in the field. This proficiency empowers me to excel in crafting web
               applications that are both responsive and user-centric.
             </Typography>
             <Typography variant="h5" className="experiencePoints">
-              Learned Typescript with React and Redux by creating the online shopping cart
+              # Learned Typescript with React and Redux by creating the online shopping cart
               application. Click the below link to view{' '}
               <span className="fullLink">
                 <Link
@@ -91,7 +91,7 @@ const ExperiencePage = () => {
               </span>
             </Typography>
             <Typography variant="h5" className="experiencePoints">
-              Deployed URL Link{' '}
+              # Deployed URL Link{' '}
               <span className="">
                 <Link
                   href={'https://shopping-cart-using-typescript.vercel.app/'}
@@ -103,10 +103,10 @@ const ExperiencePage = () => {
               </span>
             </Typography>
             <Typography variant="h5" className="experiencePoints">
-              Learned to create reusable React components
+              # Learned to create reusable React components
             </Typography>
             <Typography variant="h5" className="experiencePoints">
-              Learned Basics of React Native for cross-platform mobile application development.
+              # Learned Basics of React Native for cross-platform mobile application development.
             </Typography>
           </AccordionDetails>
         </Accordion>
@@ -138,7 +138,7 @@ const ExperiencePage = () => {
               variant="h6"
               style={{ margin: 12, color: '#0f2e66', fontSize: 20, fontWeight: 'bold' }}
             >
-              Project 2: Online E-commerce Shopping Mobile App
+              Project 2: Customer Selfcare Mobile App
             </Typography>
             <Typography variant="h5" className="projectsDes">
               Contributed significantly to a React Native mobile application project, taking a

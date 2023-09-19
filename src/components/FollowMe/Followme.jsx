@@ -20,11 +20,13 @@ const CustomCard = styled(Card)(({ theme }) => ({
     marginTop: 16,
     background: 'none',
     paddingTop: 0,
-    boxShadow: 'rgba(21,183,255) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px',
+    // border: '1px solid #4eb0e2',
+    // boxShadow: 'none',
+    boxShadow: '#eaeaea 0px 1px 6px, rgba(0, 0, 0, 0.24) 0px 1px 2px',
     '& .MuiTypography-root': {
       '&.MuiTypography-body1': {
         color: '#707887',
-        fontSize: 16,
+        fontSize: 15,
         lineHeight: 1.6,
       },
     },
@@ -34,9 +36,10 @@ const CustomCard = styled(Card)(({ theme }) => ({
       marginRight: 10,
     },
     '& .MuiLink-root': {
-      color: '#eee',
-      fontSize: 14,
+      color: '#4eb0e2',
+      fontSize: 13,
       textTransform: 'capitalize',
+      fontWeight: 'bold',
     },
   },
 }));
@@ -80,18 +83,13 @@ const FollowMe = () => {
               <CardContent>
                 <div className="cardTitle">
                   <CardTitle variant="h6">{AllData?.followMePage?.followMeTitle?.github}</CardTitle>
-                  <GitHubIcon fontSize="large" />
+                  <GitHubIcon fontSize="large" color="primary" />
                 </div>
                 <CustomDivider variant="fullWidth" className="divider" />
                 <Typography>{AllData?.followMePage?.followMeDescription?.githubDes}</Typography>
               </CardContent>
               <CardActions>
-                <Button
-                  size="small"
-                  variant="contained"
-                  endIcon={<ArrowForwardIcon />}
-                  color="info"
-                >
+                <Button size="small" variant="outlined" endIcon={<ArrowForwardIcon />} color="info">
                   <Link href={AllData?.followMePage.Urls.github} underline="none" target="_blank">
                     {AllData?.followMePage?.followLinksButtonText}
                   </Link>
@@ -106,18 +104,13 @@ const FollowMe = () => {
                   <CardTitle variant="h6">
                     {AllData?.followMePage?.followMeTitle?.linkedIn}
                   </CardTitle>
-                  <LinkedInIcon fontSize="large" />
+                  <LinkedInIcon fontSize="large" color="primary" />
                 </div>
                 <CustomDivider variant="fullWidth" />
                 <Typography>{AllData?.followMePage?.followMeDescription?.linkedInDes}</Typography>
               </CardContent>
               <CardActions>
-                <Button
-                  size="small"
-                  variant="contained"
-                  endIcon={<ArrowForwardIcon />}
-                  color="info"
-                >
+                <Button size="small" variant="outlined" endIcon={<ArrowForwardIcon />} color="info">
                   <Link
                     href={AllData?.followMePage?.Urls?.linkedIn}
                     underline="none"
@@ -129,8 +122,6 @@ const FollowMe = () => {
               </CardActions>
             </CustomCard>
           </div>
-        </div>
-        <div className="topContainer">
           <div className="linkCard">
             <CustomCard>
               <CardContent>
@@ -146,12 +137,7 @@ const FollowMe = () => {
                 <Typography>{AllData?.followMePage?.followMeDescription?.naukriDes}</Typography>
               </CardContent>
               <CardActions>
-                <Button
-                  size="small"
-                  variant="contained"
-                  endIcon={<ArrowForwardIcon color="#eee" />}
-                  color="info"
-                >
+                <Button size="small" variant="outlined" endIcon={<ArrowForwardIcon />} color="info">
                   <Link href={AllData?.followMePage?.Urls?.naukri} underline="none" target="_blank">
                     {AllData?.followMePage?.followLinksButtonText}
                   </Link>
@@ -161,7 +147,7 @@ const FollowMe = () => {
           </div>
         </div>
       </div>
-      <div style={{ height: 30 }}></div>
+      <div style={{ height: 60 }}></div>
       <Footer />
     </div>
   );

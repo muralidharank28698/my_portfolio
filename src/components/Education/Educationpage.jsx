@@ -19,7 +19,7 @@ const CustomCard = styled(Card)(({ theme }) => ({
     margin: 'auto',
     '& .MuiTypography-root': {
       color: '#707887',
-      fontSize: 17,
+      fontSize: 16,
       textAlign: 'center',
     },
     '& .MuiCardHeader-root': {

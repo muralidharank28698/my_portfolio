@@ -16,8 +16,8 @@ import ListItemText from '@mui/material/ListItemText';
 const CustomTypographyLink = styled(Typography)(({ theme }) => ({
   '&.MuiTypography-root': {
     marginLeft: 3,
-    fontSize: 16,
-    lineHeight: 3.6,
+    fontSize: 15,
+    lineHeight: 3.8,
     textTransform: 'capitalize',
     letterSpacing: 1.2,
   },
@@ -38,7 +38,7 @@ const Headerpage = () => {
       <header className="header-fixed">
         <div className="titleLogoContainer">
           <Typography fontSize="12px" className="mailId" variant="h3">
-            <Link color="#FFFFFF" underline="none">
+            <Link color="#e3ecf3" underline="none">
               {AllData?.header?.mailId}
             </Link>
             <br />
@@ -50,7 +50,7 @@ const Headerpage = () => {
             <img
               src={require('../../../src/assets/logo.png')}
               alt=""
-              style={{ width: '58px', height: '58px', marginRight: 6 }}
+              style={{ width: '43px', height: '45px', marginRight: 6, marginTop: 2 }}
               className="logoImage"
             />
           </Link>
