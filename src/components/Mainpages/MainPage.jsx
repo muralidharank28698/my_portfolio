@@ -22,16 +22,17 @@ const CustomCard = styled(Card)(({ theme }) => ({
     display: 'flex',
     '& .MuiCardContent-root': {
       width: '96%',
-      '& .topic': {
-        color: '#FFFFFF',
-        fontSize: '7rem',
-        borderLeft: '3px solid #ffffff',
-        borderRadius: 6,
-        padding: 12,
-        textAlign: 'left',
-        fontWeight: 'bold',
-        textShadow: '1px 2px 3px rgb(5, 188, 255)',
-      },
+      // padding: '0 !important',
+      // '& .topic': {
+      //   color: '#FFFFFF',
+      //   fontSize: '7rem',
+      //   borderLeft: '3px solid #ffffff',
+      //   borderRadius: 6,
+      //   padding: 12,
+      //   textAlign: 'left',
+      //   fontWeight: 'bold',
+      //   textShadow: '1px 2px 3px rgb(5, 188, 255)',
+      // },
       '& .objective': {
         color: '#c6cacd',
         marginTop: 23,
@@ -52,8 +53,8 @@ const CustomCard = styled(Card)(({ theme }) => ({
     '& .MuiCardActions-root': {
       '& .MuiButton-root': {
         background: '#3b82f5',
-        marginTop: 14,
-        marginBottom: 14,
+        marginTop: 12,
+        marginBottom: 26,
         marginLeft: 23,
         color: '#FFFFFF',
         fontSize: 14,
@@ -90,11 +91,13 @@ const MainPage = () => {
           <CustomCard>
             <Box>
               <CardContent>
-                <Typography className="topic">
-                  Discovering my amazing
-                  <br />
-                  Art Space..!
-                </Typography>
+                <div className="animationTitle">
+                  <Typography className="topic">
+                    Discovering my amazing
+                    <br />
+                    Art Space..!
+                  </Typography>
+                </div>
                 <Typography className="objective">{AllData?.certerPart?.objective}</Typography>
                 <Typography className="role">{AllData?.certerPart?.role}</Typography>
               </CardContent>

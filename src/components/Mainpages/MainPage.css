@@ -7,7 +7,7 @@
   background-size: cover;
   background: linear-gradient(to bottom, #363535 0%, rgb(5 6 7) 0%, rgb(1 46 73 / 60%) 90%),
     url('../../assets/mainPageBg.png');
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat; */
   background-position: center;
 }
 .center_part_top {
@@ -76,6 +76,28 @@
   /* justify-content: space-between; */
 }
 
+.animationTitle .topic {
+  font-size: 7rem;
+  color: #ffffff;
+  border-left: 2px solid #ffffff;
+  border-radius: 6px;
+  padding: 12px;
+  text-align: left;
+  font-weight: bold;
+  text-shadow: 2px 2px 3px rgb(5, 188, 255);
+  animation-duration: 4s;
+  /* opacity: 1; */
+}
+
+.animationTitle .topic:nth-child(1) {
+  animation-name: animating-text;
+}
+@keyframes animating-text {
+  0% {
+    transform: translateX(100%);
+  }
+}
+
 /* media query */
 @media screen and (max-width: 1087px) {
   .center_part_top {
@@ -101,13 +123,17 @@
     text-align: center;
     margin: 4rem auto;
     height: auto;
-    padding: 3rem;
+    padding: 1.8rem;
   }
   .topContent .topContentContainer .topic {
     color: #ffffff;
     font-size: 6rem;
     font-weight: bold;
-    text-shadow: 1px 2px 3px rgb(5, 188, 255);
+    text-shadow: 2px 2px 3px rgb(5, 188, 255);
+    animation-duration: 6s;
+  }
+  .topContent .topContentContainer .topic:nth-child(1) {
+    animation-name: animating-text;
   }
   .topContent .topContentContainer .objective {
     color: #c6cacd;
@@ -124,6 +150,7 @@
   }
   .topContent .topContentContainer .btn {
     align-items: center;
+    margin-bottom: 18px;
   }
   .experienceData {
     flex-direction: column;
@@ -148,6 +175,11 @@
     text-align: center;
     margin: 0;
     font-size: 3rem;
+  }
+  @keyframes animating-text {
+    0% {
+      transform: translateY(-16%);
+    }
   }
 }
 @media screen and (max-width: 666px) {

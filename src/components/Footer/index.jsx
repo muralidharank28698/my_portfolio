@@ -28,7 +28,7 @@ const Footer = () => {
         </Typography>
       </div>
       <div className="footerCenter">
-        <CustomTypography>© Copyright 2023.All rights reserved.</CustomTypography>
+        <CustomTypography>©Copyright 2023.All rights reserved.</CustomTypography>
       </div>
       <div className="footerIcons">
         <div className="icons">
