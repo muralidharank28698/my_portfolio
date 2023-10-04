@@ -151,6 +151,9 @@
   .topContent .topContentContainer .btn {
     align-items: center;
     margin-bottom: 18px;
+    border: 1px solid #00a6d5;
+    display: inline-block;
+    border-radius: 4px;
   }
   .experienceData {
     flex-direction: column;

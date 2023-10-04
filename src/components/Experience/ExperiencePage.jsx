@@ -116,7 +116,7 @@ const ExperiencePage = () => {
           Projects
         </Typography>
         <div className="projectsContent">
-          <Paper variant="outlined" square style={{ margin: '10px' }}>
+          <Paper variant="outlined" square style={{ margin: '10px', borderRadius: 10 }}>
             <Typography
               variant="h6"
               style={{ margin: 12, color: '#0f2e66', fontSize: 18, fontWeight: 'bold' }}
@@ -133,7 +133,7 @@ const ExperiencePage = () => {
               and teams.
             </Typography>
           </Paper>
-          <Paper variant="outlined" square style={{ margin: '10px' }}>
+          <Paper variant="outlined" square style={{ margin: '10px', borderRadius: 10 }}>
             <Typography
               variant="h6"
               style={{ margin: 12, color: '#0f2e66', fontSize: 20, fontWeight: 'bold' }}

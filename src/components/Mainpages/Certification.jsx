@@ -50,7 +50,11 @@ const CertificationView = styled(Dialog)(({ theme }) => ({
     display: 'block',
   },
   '& .MuiDialogContent-root': {
-    padding: 0,
+    padding: 10,
+    // paddingTop: 10,
+    // paddingLeft: 0,
+    // paddingRight: 0,
+    // paddingBottom: 0,
     borderTop: 0,
     borderBottom: 0,
   },
@@ -76,13 +80,13 @@ const modelDialogContent = [
   },
   {
     key: 'two',
-    title: 'Title:will update soon...',
-    imageUrl: require('../../assets/dummy.jpg'),
+    title: 'Web Development',
+    imageUrl: require('../../assets/web-development-certificate.jpeg'),
   },
   {
     key: 'three',
-    title: 'Title:will update soon...',
-    imageUrl: require('../../assets/dummy.jpg'),
+    title: 'Orientatition to Entrepreneurship (PDC02_196)',
+    imageUrl: require('../../assets/PTU-PDC--008.jpg'),
   },
 ];
 
@@ -141,16 +145,17 @@ const Certification = () => {
             <CardMedia
               component="img"
               height="240"
-              image={require('../../assets/dummy.jpg')}
+              image={require('../../assets/web-development-certificate.jpeg')}
               alt=""
             />
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
-                Title: I will add in future, will update soon...
+                Web Development (NEURA 2020)
               </Typography>
               <Typography variant="h6" color="text.secondary">
-                I have to plan to learn some other courses to improve my professional career in
-                udemy platform. Once I complete, I will add the certificate...
+                In 2020, I secured first place in my college's Neura web development competition.
+                This win showcases my strong skills and commitment in crafting web solutions,
+                marking a significant milestone in my journey as a web developer.
               </Typography>
             </CardContent>
           </CardActionArea>
@@ -165,16 +170,19 @@ const Certification = () => {
             <CardMedia
               component="img"
               height="240"
-              image={require('../../assets/dummy.jpg')}
+              image={require('../../assets/PTU-PDC--008.jpg')}
               alt=""
             />
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
-                Title: I will add in future, will update soon...
+                Orientatition to Entrepreneurship (PDC02_196)
               </Typography>
               <Typography variant="h6" color="text.secondary">
-                I have to plan to learn some other courses to improve my professional career in
-                udemy platform. Once I complete, I will add the certificate...
+                Orientation to Entrepreneurship, gaining valuable insights into the fundamentals of
+                entrepreneurship, business strategy, innovation and equipped with essential
+                knowledge.
+                {/* Learn the basics of entrepreneurship with PDC02_196. Gain essential skills and
+                knowledge to kickstart your business journey and equipped with essential knowledge. */}
               </Typography>
             </CardContent>
           </CardActionArea>

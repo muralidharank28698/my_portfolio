@@ -10,7 +10,7 @@ import { AllData } from '../../AllData';
 import Headerpage from '../Header/Headerpage';
 import Footer from '../Footer';
 import Certification from './Certification';
-import { Divider } from '@mui/material';
+import Link from '@mui/material/Link';
 
 const CustomCard = styled(Card)(({ theme }) => ({
   '&.MuiCard-root': {
@@ -52,13 +52,17 @@ const CustomCard = styled(Card)(({ theme }) => ({
     },
     '& .MuiCardActions-root': {
       '& .MuiButton-root': {
-        background: '#3b82f5',
+        // background: '#3b82f5',
         marginTop: 12,
         marginBottom: 26,
         marginLeft: 23,
         color: '#FFFFFF',
         fontSize: 14,
         textTransform: 'capitalize',
+        border: '1px solid #00a6d5',
+        // '&:hover': {
+        //   border: '1px solid orange',
+        // },
       },
     },
   },
@@ -102,9 +106,11 @@ const MainPage = () => {
                 <Typography className="role">{AllData?.certerPart?.role}</Typography>
               </CardContent>
               <CardActions>
-                <Button size="small" variant="outlined">
-                  Explore now
-                </Button>
+                <Link href={AllData?.followMePage.Urls.linkedIn} target="_blank">
+                  <Button size="small" variant="outlined">
+                    Explore now
+                  </Button>
+                </Link>
               </CardActions>
             </Box>
           </CustomCard>
@@ -122,9 +128,11 @@ const MainPage = () => {
                 <Typography className="role">{AllData?.certerPart?.role}</Typography>
               </CardContent>
               <div className="btn">
-                <Button size="large" variant="contained" style={{ color: '#ffffff' }}>
-                  Explore now
-                </Button>
+                <Link href={AllData?.followMePage.Urls.linkedIn} target="_blank">
+                  <Button size="large" variant="outlined" style={{ color: '#ffffff' }}>
+                    Explore now
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

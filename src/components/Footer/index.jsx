@@ -23,9 +23,11 @@ const Footer = () => {
   return (
     <div className="footerContainer">
       <div className="footerLogo">
-        <Typography variant="body1" className="footerLogoText">
-          <span className="myName">muralidharan</span>portfolio
-        </Typography>
+        <Link href="/" underline="none">
+          <Typography variant="body1" className="footerLogoText">
+            <span className="myName">muralidharan</span>portfolio
+          </Typography>
+        </Link>
       </div>
       <div className="footerCenter">
         <CustomTypography>©Copyright 2023.All rights reserved.</CustomTypography>
