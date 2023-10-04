@@ -34,12 +34,12 @@
   display: none;
   margin-top: 12px;
 }
-.mobileViewLink {
+/* .mobileViewLink {
   color: #ffffff;
-}
+} */
 /* media query */
 @media screen and (max-width: 1085px) {
-  .headerContainer .menuText {
+  .headerContainer .links {
     display: none;
   }
   .headerContainer .header-limiter {
@@ -49,7 +49,7 @@
     display: block;
   }
   .mailId {
-    color: rgb(3 225 255) !important;
+    /* color: rgb(3 225 255) !important; */
     font-size: 1.7rem !important;
     line-height: 3rem !important;
   }
@@ -66,4 +66,20 @@
     margin-top: 20px;
     margin-right: -9rem !important;
   }
+}
+
+.activeLink {
+  color: rgb(248, 248, 248);
+  text-decoration: none;
+}
+/* .activeLink :hover {
+  border-bottom: 2px solid #e3ecf3;
+  color: rgb(3, 225, 255);
+} */
+.links {
+  margin-left: 2rem;
+}
+.active {
+  color: rgb(3, 225, 255);
+  border-bottom: 2px solid #e3ecf3;
 }
