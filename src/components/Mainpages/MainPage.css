@@ -42,9 +42,16 @@
   padding: 20px;
   background-color: #f9fafb;
 }
+.TopCertificateCards {
+  width: 100%;
+}
 .certificateCards {
-  display: flex;
+  width: 86%;
+  margin: auto;
   justify-content: center;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 18px;
 }
 .certification .title {
   color: #0f2e66;
@@ -107,8 +114,9 @@
 @media screen and (max-width: 840px) {
   .certificateCards {
     display: grid;
+    width: 90%;
     grid-template-columns: auto auto;
-    gap: 38px;
+    /* gap: 38px; */
   }
 }
 @media screen and (max-width: 680px) {
@@ -207,6 +215,16 @@
     background: linear-gradient(to bottom, #363535 0%, rgb(5 6 7) 0%, rgb(1 46 73 / 60%) 90%),
       url('../../assets/mainPageBg.png');
     background-position: center;
+  }
+  .certification {
+    padding: 0 0 30px 0px;
+  }
+  .certification .title {
+    padding-top: 30px;
+  }
+
+  .experienceData {
+    padding: 0;
   }
 }
 /* @media screen and (max-width: 990px) {

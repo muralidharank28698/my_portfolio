@@ -7,14 +7,50 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
-import Paper from '@mui/material/Paper';
+import { styled } from '@mui/material/styles';
+import { Button } from '@mui/material';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardActions from '@mui/material/CardActions';
+import Divider from '@mui/material/Divider';
+import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+
+const CustomCard = styled(Card)(({ theme }) => ({
+  '&.MuiCard-root': {
+    // margin: 10,
+    borderRadius: 10,
+    background: 'rgb(11 11 11)',
+    border: '1px solid rgb(55 54 54)',
+    '& .MuiCardActions-root': {
+      float: 'right',
+      marginBottom: 10,
+      marginRight: 10,
+    },
+    '& .MuiButton-root': {
+      color: '#7edea7',
+      borderRadius: 20,
+      border: '1px solid #187542',
+      '&:hover': {
+        color: '#00cfe8',
+        border: '1px solid #00cfe8',
+      },
+    },
+  },
+}));
+const CustomDivider = styled(Divider)(({ theme }) => ({
+  '&.MuiDivider-root': {
+    marginBottom: 18,
+    marginTop: 15,
+    background: '#343535',
+  },
+}));
 
 const ExperiencePage = () => {
   return (
     <div className="container">
       <Headerpage />
       <div className="experienceContainer">
-        <Typography variant="h6" className="ExperienceHeading">
+        <Typography variant="h6" className="ExperienceFirstHeading">
           Experience
         </Typography>
         <Accordion expanded={true}>
@@ -111,48 +147,106 @@ const ExperiencePage = () => {
           </AccordionDetails>
         </Accordion>
       </div>
-      <div className="experienceContainer">
-        <Typography variant="h6" className="ExperienceHeading">
-          Projects
-        </Typography>
-        <div className="projectsContent">
-          <Paper variant="outlined" square style={{ margin: '10px', borderRadius: 10 }}>
-            <Typography
-              variant="h6"
-              style={{ margin: 12, color: '#0f2e66', fontSize: 18, fontWeight: 'bold' }}
-            >
-              Project 1: Online E-commerce Shopping Portal
-            </Typography>
-            <Typography variant="h5" className="projectsDes">
-              In this project, I excelled in a multifaceted role, overseeing UI development,
-              seamless API integration, and promptly addressing client-requested modifications.
-              Additionally, I demonstrated a keen eye for detail by efficiently resolving bugs and
-              ensuring a stable project environment. My contributions underscored my adaptability
-              and commitment to delivering high-quality results. This experience has equipped me
-              with a versatile skill set, poised to make meaningful contributions to future projects
-              and teams.
-            </Typography>
-          </Paper>
-          <Paper variant="outlined" square style={{ margin: '10px', borderRadius: 10 }}>
-            <Typography
-              variant="h6"
-              style={{ margin: 12, color: '#0f2e66', fontSize: 20, fontWeight: 'bold' }}
-            >
-              Project 2: Customer Selfcare Mobile App
-            </Typography>
-            <Typography variant="h5" className="projectsDes">
-              Contributed significantly to a React Native mobile application project, taking a
-              hands-on role in multiple facets. Developed and refined the user interface to align
-              with client specifications, ensuring an intuitive and visually appealing mobile app.
-              Integrated APIs seamlessly to enhance app functionality and user experience. Managed
-              and optimized codebase for efficiency, ensuring clean and maintainable code throughout
-              the project lifecycle.
-            </Typography>
-          </Paper>
+      <div className="projectsContainer">
+        <div className="experienceContainer">
+          <Typography variant="h6" className="ExperienceHeading">
+            Projects
+          </Typography>
+          <div className="projectsContent">
+            <CustomCard>
+              <CardContent>
+                <Typography variant="h6" className="proTitle">
+                  Online E-commerce Shopping Portal
+                </Typography>
+                <CustomDivider variant="fullWidth" />
+                <Typography variant="h5" className="projectsDes">
+                  In this project, I excelled in a multifaceted role, overseeing UI development,
+                  seamless API integration, and promptly addressing client-requested modifications.
+                  Additionally, I demonstrated a keen eye for detail by efficiently resolving bugs
+                  and ensuring a stable project environment. My contributions underscored my
+                  adaptability and commitment to delivering high-quality results. This experience
+                  has equipped me with a versatile skill set, poised to make meaningful
+                  contributions to future projects and teams.
+                </Typography>
+              </CardContent>
+              <CardActions>
+                <Button size="large" variant="outlined" endIcon={<NavigateNextIcon />}>
+                  Explore
+                </Button>
+              </CardActions>
+            </CustomCard>
+            <CustomCard>
+              <CardContent>
+                <Typography variant="h6" className="proTitle">
+                  Customer Selfcare Mobile App
+                </Typography>
+                <CustomDivider variant="fullWidth" />
+                <Typography variant="h5" className="projectsDes">
+                  {/* Contributed significantly to a React Native mobile application project, taking a
+                  hands-on role in multiple facets. Developed and refined the user interface to
+                  align with client specifications, ensuring an intuitive and visually appealing
+                  mobile app. Integrated APIs seamlessly to enhance app functionality and user
+                  experience. Managed and optimized codebase for efficiency, ensuring clean and
+                  maintainable code throughout the project lifecycle. */}
+                  Played a pivotal role in a React Native mobile application project, actively
+                  participating in various aspects. Primarily focused on honing and perfecting the
+                  user interface to meet the client's exact requirements, guaranteeing a
+                  user-friendly and visually captivating mobile app. Integrated APIs to the app's
+                  capabilities and improve the overall user experience. Additionally optimizing code
+                  for maximum efficiency, thereby maintaining a high standard of clean and
+                  sustainable code throughout the entire project journey.
+                </Typography>
+              </CardContent>
+              <CardActions>
+                <Button size="large" variant="outlined" endIcon={<NavigateNextIcon />}>
+                  Explore
+                </Button>
+              </CardActions>
+            </CustomCard>
+            {/* <CustomPaper variant="outlined" square>
+              <Typography
+                variant="h6"
+                style={{ margin: 12, color: '#7edea7', fontSize: '3rem', fontWeight: 'bold' }}
+              >
+                Online E-commerce Shopping Portal
+              </Typography>
+              <Typography variant="h5" className="projectsDes">
+                In this project, I excelled in a multifaceted role, overseeing UI development,
+                seamless API integration, and promptly addressing client-requested modifications.
+                Additionally, I demonstrated a keen eye for detail by efficiently resolving bugs and
+                ensuring a stable project environment. My contributions underscored my adaptability
+                and commitment to delivering high-quality results. This experience has equipped me
+                with a versatile skill set, poised to make meaningful contributions to future
+                projects and teams.
+              </Typography>
+              <Button size="large" variant="outlined" style={{ color: '#ffffff' }}>
+                Explore now
+              </Button>
+            </CustomPaper> */}
+            {/* <CustomPaper variant="outlined" square>
+              <Typography
+                variant="h6"
+                style={{ margin: 12, color: '#7edea7', fontSize: '3rem', fontWeight: 'bold' }}
+              >
+                Customer Selfcare Mobile App
+              </Typography>
+              <Typography variant="h5" className="projectsDes">
+                Contributed significantly to a React Native mobile application project, taking a
+                hands-on role in multiple facets. Developed and refined the user interface to align
+                with client specifications, ensuring an intuitive and visually appealing mobile app.
+                Integrated APIs seamlessly to enhance app functionality and user experience. Managed
+                and optimized codebase for efficiency, ensuring clean and maintainable code
+                throughout the project lifecycle.
+              </Typography>
+              <Button size="large" variant="outlined" style={{ color: '#ffffff' }}>
+                Explore now
+              </Button>
+            </CustomPaper> */}
+          </div>
         </div>
       </div>
 
-      <div style={{ height: 20 }}></div>
+      <div style={{ height: 120 }}></div>
       <Footer />
     </div>
   );

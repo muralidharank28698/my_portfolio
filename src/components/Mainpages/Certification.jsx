@@ -19,6 +19,7 @@ const CustomCertificateCard = styled(Card)(({ theme }) => ({
     background: 'none',
     maxWidth: 308,
     boxShadow: 'none',
+    margin: 12,
     border: '1px solid #d7dddc',
     '& .MuiCardMedia-root': {
       objectFit: 'fill',
@@ -80,11 +81,16 @@ const modelDialogContent = [
   },
   {
     key: 'two',
+    title: 'The Ultimate Redux Course 2023 - [LATEST Redux-toolkit]',
+    imageUrl: require('../../assets/redux-toolkit-certificate.jpg'),
+  },
+  {
+    key: 'three',
     title: 'Web Development',
     imageUrl: require('../../assets/web-development-certificate.jpeg'),
   },
   {
-    key: 'three',
+    key: 'four',
     title: 'Orientatition to Entrepreneurship (PDC02_196)',
     imageUrl: require('../../assets/PTU-PDC--008.jpg'),
   },
@@ -93,7 +99,6 @@ const modelDialogContent = [
 const Certification = () => {
   const [open, setOpen] = useState(false);
   const [name, setName] = useState('');
-
   const handleClickOpen = (item) => {
     setOpen(true);
     switch (item) {
@@ -104,6 +109,9 @@ const Certification = () => {
         setName(item);
         break;
       case 'three':
+        setName(item);
+        break;
+      case 'four':
         setName(item);
         break;
       default:
@@ -145,6 +153,34 @@ const Certification = () => {
             <CardMedia
               component="img"
               height="240"
+              image={require('../../assets/redux-toolkit-certificate.jpg')}
+              alt=""
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+                The Ultimate Redux Course 2023 - [LATEST Redux-toolkit]
+              </Typography>
+              <Typography variant="h6" color="text.secondary">
+                {/* Proficient in Redux and Redux Toolkit for streamlined state management in React
+                applications. Demonstrated through practical projects in my portfolio. */}
+                {/* Proficient in implementing Redux and Redux Toolkit for state management in React
+                applications, enabling efficient data handling and seamless user experiences. */}
+                Utilized Redux and Redux Toolkit for effective state management in React
+                applications, ensuring smooth data flow and user interactions.
+              </Typography>
+            </CardContent>
+          </CardActionArea>
+          <CardActions>
+            <Button size="small" color="primary" onClick={() => handleClickOpen('two')}>
+              View
+            </Button>
+          </CardActions>
+        </CustomCertificateCard>
+        <CustomCertificateCard sx={{ maxWidth: 345, margin: 3 }}>
+          <CardActionArea>
+            <CardMedia
+              component="img"
+              height="240"
               image={require('../../assets/web-development-certificate.jpeg')}
               alt=""
             />
@@ -160,7 +196,7 @@ const Certification = () => {
             </CardContent>
           </CardActionArea>
           <CardActions>
-            <Button size="small" color="primary" onClick={() => handleClickOpen('two')}>
+            <Button size="small" color="primary" onClick={() => handleClickOpen('three')}>
               View
             </Button>
           </CardActions>
@@ -187,7 +223,7 @@ const Certification = () => {
             </CardContent>
           </CardActionArea>
           <CardActions>
-            <Button size="small" color="primary" onClick={() => handleClickOpen('three')}>
+            <Button size="small" color="primary" onClick={() => handleClickOpen('four')}>
               View
             </Button>
           </CardActions>
@@ -218,7 +254,7 @@ const Certification = () => {
                 >
                   <CloseIcon />
                 </IconButton>
-                <Divider style={{ width: '95%', margin: 'auto' }} />
+                <Divider style={{ width: '97%', margin: 'auto' }} />
                 <DialogContent dividers>
                   <img src={item?.imageUrl} alt="" style={{ width: '100%', height: '100%' }} />
                 </DialogContent>
