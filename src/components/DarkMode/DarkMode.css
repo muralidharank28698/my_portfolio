@@ -1,0 +1,65 @@
+.dark_mode {
+  display: inline-flex;
+}
+
+.dark_mode_label {
+  width: 45px;
+  height: 21px;
+  position: relative;
+  display: block;
+  border-radius: 200px;
+  cursor: pointer;
+  transition: 0.3s;
+  border: 1px solid rgba(94, 146, 168, 0.621);
+  box-shadow: 0 0px 30px 6px rgba(94, 146, 168, 0.621);
+}
+.dark_mode_label:after {
+  content: '';
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 0.4px;
+  left: 1.6px;
+  background: linear-gradient(180deg, #ffcc89, #d8860b);
+  border-radius: 50%;
+  transition: 0.3s;
+}
+.dark_mode_input {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+.dark_mode_input:checked + .dark_mode_label {
+  background: #20344f;
+}
+.dark_mode_input:checked + .dark_mode_label:after {
+  left: 40px;
+  transform: translateX(-100%);
+  background: linear-gradient(180deg, #4b75ff, #02b5fc);
+}
+.dark_mode_label:active:after {
+  width: 30px;
+}
+
+.dark_mode_label svg {
+  position: absolute;
+  width: 14px;
+  top: 5px;
+  z-index: 100;
+}
+.dark_mode_label svg.sun {
+  left: 3.5px;
+  transition: 0.3s;
+  top: 2px;
+}
+.dark_mode_label svg.moon {
+  left: 25px;
+  transition: 0.3s;
+  top: 2px;
+}
+.dark_mode_input:checked + .dark_mode_label svg.sun {
+  fill: #04cdff;
+}
+.dark_mode_input:checked + .dark_mode_label svg.moon {
+  fill: #04ff4f;
+}

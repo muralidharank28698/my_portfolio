@@ -1,7 +1,7 @@
 export const AllData = {
   followMePage: {
-    followMePageTitle: 'Follow here',
-    followLinksButtonText: 'Click here',
+    followMePageTitle: 'Connect Here',
+    followLinksButtonText: 'Connect here',
     followMeTitle: { github: 'Github', linkedIn: 'LinkedIn', naukri: 'Naukri' },
     followMeDescription: {
       githubDes:
@@ -19,7 +19,7 @@ export const AllData = {
   },
   header: {
     mailId: 'muralidharank28698@gmail.com',
-    phoneNO: 'PhoneNo: 8098633412',
+    phoneNO: '8098633412',
     phoneNoOnly: '8098633412',
   },
   leftSideData: {
@@ -39,15 +39,15 @@ export const AllData = {
   },
   certerPart: {
     objective:
-      'Adaptable IT professional with over 1+ years of experience excelling in Front-End technologies. Proficient in designing, developing, and deploying software solutions that drive efficiency and innovation. Demonstrated ability to collaborate effectively within cross-functional teams to deliver high-quality code and meet project objectives. Continuously staying up-to-date with the latest industry trends and technologies to ensure the delivery of cutting-edge solutions. Excited to contribute my skills and experience to create impactful software projects and solutions in the future.',
+      'Adaptable IT professional with over 2 years of experience excelling in Front-End technologies. Proficient in designing, developing, and deploying software solutions that drive efficiency and innovation. Demonstrated ability to collaborate effectively within cross-functional teams to deliver high-quality code and meet project objectives. Continuously staying up-to-date with the latest industry trends and technologies to ensure the delivery of cutting-edge solutions. Excited to contribute my skills and experience to create impactful software projects and solutions in the future.',
     role: 'I am a software developer..!',
     reactDeveloper: 'React Developer',
     experience: '01+ years experience',
     projects: '10+ projects',
-    projectDescription: 'have been developed',
-    hackerRank: 'Hackerrank profile',
-    hackerRankDes: '80% score in hacker rank portal',
+    projectDescription: 'have developed',
+    hackerRank: 'Hackerrank Profile',
+    hackerRankDes: '80% score in hacker rank',
     deployProjects: '02+ projects',
-    deployProjectsDes: '02+ projects have deployed',
+    deployProjectsDes: '02+ projects deployed',
   },
 };

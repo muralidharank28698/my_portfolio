@@ -13,6 +13,7 @@
   padding: 10px;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  border: 1px solid red;
 }
 .wrapContainerReverse {
   margin: 60px auto;
@@ -34,4 +35,46 @@
   border-right: 1px solid #a7afbe;
   border-left: 1px solid #a7afbe;
   border-radius: 8px;
+}
+.contianerBody .educationTitle {
+  font-weight: bold;
+  font-size: 2rem;
+  margin-top: 1.6rem;
+  padding-top: 0.4rem;
+  padding-bottom: 6rem;
+  text-align: center;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 20px 0px;
+}
+
+.col-md-4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  min-height: 200px;
+  box-shadow: 0 0px 3px 0 rgba(94, 146, 168, 0.621);
+  border-radius: 12px;
+}
+
+@media screen and (max-width: 1200px) {
+  .row {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  }
+}
+@media screen and (max-width: 925px) {
+  .row {
+    display: flex;
+    flex-direction: column;
+  }
+  .col-md-4 {
+    width: 400px;
+  }
 }

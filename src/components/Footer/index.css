@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-between;
   box-shadow: rgba(182, 182, 183, 0.5) 0px -6px 6px -6px;
-  margin: auto;
+  margin: 8rem auto;
   border-radius: 6px;
   align-items: center;
 }
@@ -13,22 +13,21 @@
   justify-content: space-evenly;
 }
 .icons {
-  width: 200px;
+  width: 218px;
   cursor: pointer;
   display: flex;
   justify-content: space-around;
 }
 .icons :hover {
-  color: #ff0088;
+  color: #ff9704 !important;
 }
 .footerLogo .footerLogoText {
-  color: #ff6600;
-  font-size: 2.8rem;
+  color: #e55111;
+  font-size: 2.6rem;
   font-weight: bold;
 }
 .myName {
-  color: rgb(15, 46, 102);
-  font-size: 1.8rem;
+  font-size: 1.6rem;
 }
 /* media query */
 @media screen and (max-width: 826px) {

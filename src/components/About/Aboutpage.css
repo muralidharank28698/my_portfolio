@@ -1,6 +1,9 @@
-.container {
-  width: 100%;
+.contactContainer {
+  width: 80%;
+  margin: auto;
+  padding-top: 8rem;
 }
+
 .aboutContainer {
   margin: 10rem auto;
 }
@@ -20,20 +23,123 @@
   width: 400px;
   height: 360px;
 }
-/* media query */
-@media screen and (max-width: 1050px) {
-  .wrapper {
-    display: flex;
-    margin: auto;
+.contactImg {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #00c7f6;
+  border-radius: 50%;
+  display: inline-block;
+  margin-bottom: 6px;
+}
+.contactImg img {
+  padding: 4px;
+}
+.contactContent {
+  margin-left: 10px;
+}
+.contactFormLeft .contactNames {
+  padding-top: 2px;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+.contactForm .contactFormLeft {
+  width: 30%;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.contactForm .separator {
+  margin: auto;
+  text-align: center;
+  background: #185f81;
+  height: 70%;
+  text-align: center;
+  justify-content: center;
+  text-align: center;
+}
+.contactForm .contactFormRight {
+  width: 60%;
+  height: 100%;
+  padding: 0rem 7rem;
+}
+
+.contactForm {
+  padding: 10px;
+  height: 300px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6rem;
+  margin-bottom: 16em;
+  border-left: 3px solid rgb(48, 199, 249);
+  border-radius: 3px;
+}
+@media screen and (max-width: 825px) {
+  .contactForm {
     flex-direction: column;
-    justify-content: space-between;
+    align-items: center;
+    height: 100%;
   }
-  .wrapperImage {
-    margin: auto;
+  .contactForm .contactFormLeft {
+    width: 100%;
+    text-align: center;
   }
-  .wrapperImage img {
-    width: 250px;
-    height: 250px;
-    margin: auto;
+  .contactForm .contactFormRight {
+    width: 80%;
+    margin-top: 28px;
+    padding: 0rem;
   }
+  .contactForm .separator {
+    display: none;
+  }
+}
+@media screen and (max-width: 550px) {
+  .contactForm {
+    border-left: 0px solid rgb(48, 199, 249);
+    border-radius: 0px;
+  }
+  .contactForm .contactFormRight {
+    width: 100%;
+  }
+}
+input {
+  color: #87a4b6;
+  width: 100%;
+  background: none;
+  border: 1px solid gray;
+  outline: none;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  background: none;
+  font-weight: bold;
+  border: 1px solid gray;
+  resize: none;
+  margin-bottom: 20px;
+  transition: all 0.2s ease-in-out;
+}
+
+.send-button {
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+  border: 1px solid gray;
+  font-family: sans-serif;
+  font-size: 16px;
+  color: #00cebc;
+  border: 1px solid #00cebc;
+}
+.send-button:hover {
+  background: linear-gradient(70deg, #003bfd, #00cebc);
+  color: #fff;
 }

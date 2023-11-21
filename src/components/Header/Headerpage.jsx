@@ -3,26 +3,33 @@ import './Headerpage.css';
 import { Link } from '@mui/material';
 import { Box, Typography } from '@mui/material';
 import { AllData } from '../../AllData';
-import { styled } from '@mui/material/styles';
 import MenuIcon from '@mui/icons-material/Menu';
-import CloseIcon from '@mui/icons-material/Close';
 import IconButton from '@mui/material/IconButton';
 import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
-import { NavLink } from 'react-router-dom';
-
-const CustomTypographyLink = styled(Typography)(({ theme }) => ({
-  '&.MuiTypography-root': {
-    marginLeft: 3,
-    fontSize: 15,
-    lineHeight: 3.8,
-    textTransform: 'capitalize',
-    letterSpacing: 1.2,
-  },
-}));
+import DarkMode from '../DarkMode/DarkMode';
+import { BrowserRouter } from 'react-router-dom';
+import { HashLink as HLink } from 'react-router-hash-link';
+import MainPage from '../Mainpages/MainPage';
+import Educationpage from '../Education/Educationpage';
+import SkillsExperience from '../SkillsExperience';
+import ExperiencePage from '../Experience/ExperiencePage';
+import Aboutpage from '../About/Aboutpage';
+import FollowMe from '../FollowMe/Followme';
+import Footer from '../Footer';
+import TopPart from '../TopComponent/TopPart';
+import SchoolOutlinedIcon from '@mui/icons-material/SchoolOutlined';
+import WorkOutlineOutlinedIcon from '@mui/icons-material/WorkOutlineOutlined';
+import LinkOutlinedIcon from '@mui/icons-material/LinkOutlined';
+import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
+import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
+import SettingsSuggestOutlinedIcon from '@mui/icons-material/SettingsSuggestOutlined';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import Avatar from '@mui/material/Avatar';
 
 const Headerpage = () => {
   const [toggleOpen, setToggleOpen] = useState(false);
@@ -37,177 +44,267 @@ const Headerpage = () => {
   const navLinks = document.querySelectorAll('.activeLink');
   navLinks.forEach((navLinksEl) => {
     navLinksEl.addEventListener('click', () => {
-      document.querySelector('.active').classList.remove('active');
+      document.querySelector('active').classList.remove('active');
       navLinksEl.classList.add('active');
     });
   });
+
   return (
-    <div className="headerContainer">
-      <header className="header-fixed">
-        <div className="titleLogoContainer">
-          <Typography className="mailId" variant="h3" color="rgb(255, 255, 255)">
-            {AllData?.header?.mailId}
-          </Typography>
-          <Typography className="mailId" color="rgb(3 225 255)">
-            {AllData?.header?.phoneNoOnly}
-          </Typography>
+    <div className="headerContainer" id="topSection">
+      <div className="leftContainer">
+        <div className="profile">
+          <img src={require('../../assets/profile.png')} alt="" />
         </div>
-        <div style={{ display: 'flex', lineHeight: '10px' }} className="menutext">
-          <Link href="/">
-            <img
-              src={require('../../../src/assets/logo.png')}
-              alt=""
-              style={{ width: '43px', height: '45px', marginRight: 6, marginTop: 2 }}
-              className="logoImage"
-            />
-          </Link>
-          <div className="links">
-            <NavLink to="/" className="activeLink">
-              <CustomTypographyLink>Home</CustomTypographyLink>
-            </NavLink>
-          </div>
-          <div className="links">
-            <NavLink to="/skillsExperience" className="activeLink">
-              <CustomTypographyLink>Skills</CustomTypographyLink>
-            </NavLink>
-          </div>
-          <div className="links">
-            <NavLink to="/education" className="activeLink">
-              <CustomTypographyLink>Education</CustomTypographyLink>
-            </NavLink>
-          </div>
-          <div className="links">
-            <NavLink to="/profession" className="activeLink">
-              <CustomTypographyLink>Experience</CustomTypographyLink>
-            </NavLink>
-          </div>
-          <div className="links">
-            <NavLink to="/followme" className="activeLink">
-              <CustomTypographyLink>Follow me</CustomTypographyLink>
-            </NavLink>
-          </div>
-          <div className="links">
-            <NavLink to="/about" className="activeLink">
-              <CustomTypographyLink>About</CustomTypographyLink>
-            </NavLink>
+        <div>
+          <div className="name">
+            <Typography className="myName">Muralidharan K</Typography>
+
+            <Link
+              href={AllData?.followMePage.Urls.linkedIn}
+              target="_blank"
+              style={{ display: 'inline-block', width: '50px' }}
+            >
+              <IconButton>
+                <LinkedInIcon fontSize="large" />
+              </IconButton>
+            </Link>
+            <Link href={AllData?.followMePage.Urls.github} target="_blank">
+              <IconButton>
+                <GitHubIcon fontSize="large" />
+              </IconButton>
+            </Link>
           </div>
         </div>
-        <div className="header-limiter">
-          <Typography color="#FFFFFF" fontSize="15px">
-            {AllData?.header?.mailId}
+        <BrowserRouter>
+          <div className="menus">
+            <HLink to="#topSection" className="activeLink">
+              <div className="links">
+                <HomeOutlinedIcon fontSize="large" />
+                <Typography className="menuName">Home</Typography>
+              </div>
+            </HLink>
+            <HLink to="#SkillsAnsExperienceSection" className="activeLink">
+              <div className="links">
+                <SettingsSuggestOutlinedIcon fontSize="large" />
+                <Typography className="menuName">Skills</Typography>
+              </div>
+            </HLink>
+            <HLink to="#educationSection" className="activeLink">
+              <div className="links">
+                <SchoolOutlinedIcon fontSize="large" />
+                <Typography className="menuName">Education</Typography>
+              </div>
+            </HLink>
+            <HLink to="#professionSection" className="activeLink">
+              <div className="links">
+                <WorkOutlineOutlinedIcon fontSize="large" />
+                <Typography className="menuName">Experience</Typography>
+              </div>
+            </HLink>
+            <HLink to="#followmeSection" className="activeLink">
+              <div className="links">
+                <LinkOutlinedIcon fontSize="large" />
+                <Typography className="menuName">Follow me</Typography>
+              </div>
+            </HLink>
+            <HLink to="#aboutSection" className="activeLink">
+              <div className="links">
+                <InfoOutlinedIcon fontSize="large" />
+                <Typography className="menuName">Contact</Typography>
+              </div>
+            </HLink>
+          </div>
+        </BrowserRouter>
+        <div className="theme">
+          <Typography fontSize="14px" style={{ marginTop: 9, color: '#f57701', fontWeight: 600 }}>
+            Theme
           </Typography>
-          <Typography style={{ color: 'rgb(3 225 255)', fontSize: '15px' }}>
-            {AllData?.header?.phoneNO}
+          <div className="themeSwitchBtn">
+            <DarkMode />
+          </div>
+        </div>
+        <div className="footer">
+          <Typography fontSize="14px" style={{ marginTop: 3 }}>
+            &copy; copyright 2023
+          </Typography>
+          <Typography fontSize="14px" style={{ marginTop: 10 }}>
+            designed by <span style={{ color: '#f57701', fontWeight: 600 }}>muralidharan</span>
           </Typography>
         </div>
-        <div className="menuIcon">
-          <IconButton aria-label="delete" color="primary" onClick={handleToggleIcon}>
-            <MenuIcon style={{ fontSize: 35, color: '#FFFFFF' }} />
-          </IconButton>
-          <React.Fragment key={0}>
-            <Drawer anchor="top" open={toggleOpen} onClose={handleClose}>
-              <Box style={{ background: 'rgb(7 10 14)', width: '100%' }} role="presentation">
-                <List>
-                  <ListItem disablePadding>
-                    <ListItemButton>
-                      <ListItemText style={{ textAlign: 'center' }}>
-                        <NavLink to="/" className="activeLink">
-                          <Typography variant="h5">Home</Typography>
-                        </NavLink>
-                        {/* <Link underline="none" href="/">
-                          <Typography variant="h5" className="mobileViewLink">
+      </div>
+      <div className="rightContainer">
+        <div className="headerPart">
+          <div className="headerPartContent">
+            <IconButton aria-label="delete" color="primary" onClick={handleToggleIcon}>
+              <MenuIcon style={{ fontSize: 35, color: '#FFFFFF' }} />
+            </IconButton>
+            <div style={{ display: 'flex' }}>
+              <div style={{ marginTop: 10, marginRight: 20 }}>
+                <DarkMode />
+              </div>
+              <div className="headerPartContentAvatar">
+                <Link href="/" underline="none">
+                  <Avatar
+                    variant="rounded"
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      background: 'none',
+                    }}
+                    src={require('../../assets/logoProfile.png')}
+                  ></Avatar>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <TopPart />
+        <MainPage />
+        <SkillsExperience />
+        <Educationpage />
+        <ExperiencePage />
+        <FollowMe />
+        <Aboutpage />
+        <Footer />
+      </div>
+      <div className="mobileSideNav">
+        <BrowserRouter>
+          <Drawer
+            anchor="left"
+            open={toggleOpen}
+            onClose={handleClose}
+            style={{ border: 'none', background: 'none !important' }}
+          >
+            <Box
+              style={{
+                width: '280px',
+                height: '100%',
+                background: 'radial-gradient(circle, rgb(1 7 11) 37%, rgb(1 18 27) 100%)',
+              }}
+              role="presentation"
+            >
+              <div
+                className="name"
+                style={{
+                  borderBottom: '1px solid #173b56',
+                  boxShadow: '0 5px 30px rgba(0, 0, 0, 0.7)',
+                  paddingBottom: 10,
+                  background: 'radial-gradient(circle, rgb(0 4 4) 37%, rgb(2 11 16) 100%)',
+                }}
+              >
+                <Typography className="myName" style={{ marginTop: 28 }}>
+                  Muralidharan K
+                </Typography>
+                <Link
+                  href={AllData?.followMePage.Urls.linkedIn}
+                  target="_blank"
+                  style={{ display: 'inline-block', width: '50px' }}
+                >
+                  <IconButton>
+                    <LinkedInIcon sx={{ fontSize: 30 }} />
+                  </IconButton>
+                </Link>
+                <Link href={AllData?.followMePage.Urls.github} target="_blank">
+                  <IconButton>
+                    <GitHubIcon sx={{ fontSize: 30 }} />
+                  </IconButton>
+                </Link>
+              </div>
+              <List style={{ paddingTop: 20, paddingLeft: 20 }}>
+                <ListItem disablePadding>
+                  <ListItemButton>
+                    <ListItemText>
+                      <HLink to="#topSection" className="activeLink" onClick={handleClose}>
+                        <div className="links">
+                          <HomeOutlinedIcon fontSize="large" />
+                          <Typography className="menuName" style={{ color: '#a9bbcb' }}>
                             Home
                           </Typography>
-                        </Link> */}
-                      </ListItemText>
-                    </ListItemButton>
-                  </ListItem>
-                  <ListItem disablePadding>
-                    <ListItemButton>
-                      <ListItemText style={{ textAlign: 'center' }}>
-                        {/* <Link underline="none" href="/skillsExperience">
-                          <Typography variant="h5" className="mobileViewLink">
+                        </div>
+                      </HLink>
+                    </ListItemText>
+                  </ListItemButton>
+                </ListItem>
+                <ListItem disablePadding>
+                  <ListItemButton>
+                    <ListItemText>
+                      <HLink
+                        to="#SkillsAnsExperienceSection"
+                        className="activeLink"
+                        onClick={handleClose}
+                      >
+                        <div className="links">
+                          <SettingsSuggestOutlinedIcon fontSize="large" />
+                          <Typography className="menuName" style={{ color: '#a9bbcb' }}>
                             Skills
                           </Typography>
-                        </Link> */}
-                        <NavLink to="/skillsExperience" className="activeLink">
-                          <Typography variant="h5">Skills</Typography>
-                        </NavLink>
-                      </ListItemText>
-                    </ListItemButton>
-                  </ListItem>
-                  <ListItem disablePadding>
-                    <ListItemButton>
-                      <ListItemText style={{ textAlign: 'center' }}>
-                        <NavLink to="/education" className="activeLink">
-                          <Typography variant="h5">Education</Typography>
-                        </NavLink>
-                        {/* <Link underline="none" href="education">
-                          <Typography variant="h5" className="mobileViewLink">
+                        </div>
+                      </HLink>
+                    </ListItemText>
+                  </ListItemButton>
+                </ListItem>
+                <ListItem disablePadding>
+                  <ListItemButton>
+                    <ListItemText>
+                      <HLink to="#topSection" className="activeLink" onClick={handleClose}>
+                        <div className="links">
+                          <SchoolOutlinedIcon fontSize="large" />
+                          <Typography className="menuName" style={{ color: '#a9bbcb' }}>
                             Education
                           </Typography>
-                        </Link> */}
-                      </ListItemText>
-                    </ListItemButton>
-                  </ListItem>
-                  <ListItem disablePadding>
-                    <ListItemButton>
-                      <ListItemText style={{ textAlign: 'center' }}>
-                        <NavLink to="/profession" className="activeLink">
-                          <Typography variant="h5">Experience</Typography>
-                        </NavLink>
-                        {/* <Link underline="none" href="profession">
-                          <Typography variant="h5" className="mobileViewLink">
+                        </div>
+                      </HLink>
+                    </ListItemText>
+                  </ListItemButton>
+                </ListItem>
+                <ListItem disablePadding>
+                  <ListItemButton>
+                    <ListItemText>
+                      <HLink to="#professionSection" className="activeLink" onClick={handleClose}>
+                        <div className="links">
+                          <WorkOutlineOutlinedIcon fontSize="large" />
+                          <Typography className="menuName" style={{ color: '#a9bbcb' }}>
                             Experience
                           </Typography>
-                        </Link> */}
-                      </ListItemText>
-                    </ListItemButton>
-                  </ListItem>
-                  <ListItem disablePadding>
-                    <ListItemButton>
-                      <ListItemText style={{ textAlign: 'center' }}>
-                        <NavLink to="/followme" className="activeLink">
-                          <Typography variant="h5"> Follow me</Typography>
-                        </NavLink>
-                        {/* <Link underline="none" href="followme">
-                          <Typography variant="h5" className="mobileViewLink">
+                        </div>
+                      </HLink>
+                    </ListItemText>
+                  </ListItemButton>
+                </ListItem>
+                <ListItem disablePadding>
+                  <ListItemButton>
+                    <ListItemText>
+                      <HLink to="#followmeSection" className="activeLink" onClick={handleClose}>
+                        <div className="links">
+                          <LinkOutlinedIcon fontSize="large" />
+                          <Typography className="menuName" style={{ color: '#a9bbcb' }}>
                             Follow me
                           </Typography>
-                        </Link> */}
-                      </ListItemText>
-                    </ListItemButton>
-                  </ListItem>
-                  <ListItem disablePadding>
-                    <ListItemButton>
-                      <ListItemText style={{ textAlign: 'center' }}>
-                        <NavLink to="/about" className="activeLink">
-                          <Typography variant="h5">About</Typography>
-                        </NavLink>
-                        {/* <Link underline="none" href="about">
-                          <Typography variant="h5" className="mobileViewLink">
-                            About
+                        </div>
+                      </HLink>
+                    </ListItemText>
+                  </ListItemButton>
+                </ListItem>
+                <ListItem disablePadding>
+                  <ListItemButton>
+                    <ListItemText>
+                      <HLink to="#aboutSection" className="activeLink" onClick={handleClose}>
+                        <div className="links">
+                          <InfoOutlinedIcon fontSize="large" />
+                          <Typography className="menuName" style={{ color: '#a9bbcb' }}>
+                            Contact
                           </Typography>
-                        </Link> */}
-                      </ListItemText>
-                    </ListItemButton>
-                  </ListItem>
-                  <ListItem disablePadding>
-                    <ListItemButton>
-                      <ListItemText style={{ textAlign: 'center' }}>
-                        <CloseIcon
-                          style={{ color: '#FFFFFF', fontSize: 28 }}
-                          onClick={handleClose}
-                        />
-                      </ListItemText>
-                    </ListItemButton>
-                  </ListItem>
-                </List>
-              </Box>
-            </Drawer>
-          </React.Fragment>
-        </div>
-      </header>
+                        </div>
+                      </HLink>
+                    </ListItemText>
+                  </ListItemButton>
+                </ListItem>
+              </List>
+            </Box>
+          </Drawer>
+        </BrowserRouter>
+      </div>
     </div>
   );
 };

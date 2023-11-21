@@ -1,98 +1,115 @@
 import React from 'react';
 import './Aboutpage.css';
-import Card from '@mui/material/Card';
-import CardHeader from '@mui/material/CardHeader';
-import CardContent from '@mui/material/CardContent';
-import CardActions from '@mui/material/CardActions';
 import Typography from '@mui/material/Typography';
-import { styled } from '@mui/material/styles';
-// import FacebookIcon from '@mui/icons-material/Facebook';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import GitHubIcon from '@mui/icons-material/GitHub';
 import { Divider } from '@mui/material';
-import Link from '@mui/material/Link';
-import { AllData } from '../../AllData';
-import Headerpage from '../Header/Headerpage';
-import Footer from '../Footer';
-import YouTubeIcon from '@mui/icons-material/YouTube';
-
-const CustomCard = styled(Card)(({ theme }) => ({
-  '&.MuiPaper-root': {
-    boxShadow: 'none',
-    margin: 'auto',
-    textAlign: 'center',
-    '& .MuiTypography-root': {
-      color: '#707887',
-      fontSize: 16,
-    },
-  },
-  '& .MuiCardHeader-root': {
-    paddingTop: 28,
-  },
-}));
+import EmailIcon from '@mui/icons-material/Email';
+import Avatar from '@mui/material/Avatar';
+import CallIcon from '@mui/icons-material/Call';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
 
 const Aboutpage = () => {
   return (
-    <div className="container">
-      <Headerpage />
-      <div className="aboutContainer">
-        <div className="wrapper">
-          <div className="wrapperImage">
-            <img src={require('../../assets/006.png')} alt="" />
-          </div>
-          <CustomCard>
-            <div>
-              <Typography
-                variant="h2"
-                style={{ textAlign: 'center', color: '#0f2e66', fontSize: '5rem' }}
+    <div className="contactContainer" id="aboutSection">
+      <div
+        style={{
+          paddingTop: '3rem',
+          textAlign: 'center',
+        }}
+      >
+        <Typography
+          style={{
+            fontSize: 12,
+            textAlign: 'center',
+            marginBottom: '6rem',
+            padding: '0.87rem 1rem',
+            border: '1px solid #1d3b53',
+            display: 'inline-block',
+            borderRadius: '6px',
+            margin: '1px',
+            fontWeight: 600,
+          }}
+        >
+          Send us a message
+        </Typography>
+      </div>
+
+      <div className="contactForm">
+        <div className="contactFormLeft">
+          <div style={{ textAlign: 'center', marginBottom: 10 }}>
+            <div className="contactImg">
+              <Avatar
+                variant="rounded"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  background: 'none',
+                }}
               >
-                Wow, a whole page just about me...!
-              </Typography>
-              <CardHeader title="About me" subheader="June 28, 1998" />
-              <Typography>Age : 25</Typography>
-              <CardActions>
-                <Typography variant="body1">
-                  Welcome to the "About" page of my portfolio, where I invite you to learn more
-                  about my professional journey. With a focus on a conversational tone, I delve into
-                  my background, encompassing my skills, accomplishments, and experiences. This
-                  section provides a glimpse into the narrative of my career, creating a connection
-                  with visitors seeking to understand my unique story in the world of software
-                  development.
-                </Typography>
-              </CardActions>
-              <Divider style={{ width: '28%', margin: 'auto', borderColor: '#888f99' }} />
-              <CardContent>
-                <Typography variant="body2" color="text.secondary">
-                  No 89, Marriyamman Kovil street, Monnaiyampet,
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  Keelputhupet Post,
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  Marrakkanam Taluk, Villupuram Dt...
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  Pincode: 605014
-                </Typography>
-              </CardContent>
-              <div className="aboutIcons">
-                <Link href={AllData?.followMePage?.Urls?.linkedIn} target="_blank">
-                  <LinkedInIcon color="primary" fontSize="large" />
-                </Link>
-                <Link href={AllData?.followMePage.Urls.github} target="_blank">
-                  <GitHubIcon fontSize="large" color="primary" />
-                </Link>
-                {/* <FacebookIcon color="primary" fontSize="large" /> */}
-                <YouTubeIcon color="info" fontSize="large" />
-                <TwitterIcon color="primary" fontSize="large" />
-              </div>
+                <EmailIcon fontSize="medium" />
+              </Avatar>
             </div>
-          </CustomCard>
+            <Typography variant="h5">MailId</Typography>
+            <Typography variant="body1" className="contactNames">
+              muralidharank28698@gmail.com
+            </Typography>
+          </div>
+
+          <div style={{ textAlign: 'center', marginBottom: 10 }}>
+            <div className="contactImg">
+              <Avatar
+                variant="rounded"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  background: 'none',
+                }}
+              >
+                <CallIcon fontSize="medium" />
+              </Avatar>
+            </div>
+            <Typography variant="h5">Mobile</Typography>
+            <Typography variant="body1" className="contactNames">
+              +91 8098633412
+            </Typography>
+          </div>
+
+          <div style={{ textAlign: 'center', marginBottom: 10 }}>
+            <div className="contactImg">
+              <Avatar
+                variant="rounded"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  background: 'none',
+                }}
+              >
+                <LocationOnIcon fontSize="medium" />
+              </Avatar>
+            </div>
+            <Typography variant="h5">Location</Typography>
+            <Typography variant="body1" className="contactNames">
+              Puducherry
+            </Typography>
+          </div>
+        </div>
+        <Divider orientation="vertical" className="separator" />
+        <div className="contactFormRight">
+          <div class="form">
+            <input type="text" id="name" placeholder="Your Name" />
+            <input type="email" id="mail" placeholder="Your Email" />
+            <textarea
+              name="message"
+              id="message"
+              cols="20"
+              rows="5"
+              placeholder="Enter Your message"
+            ></textarea>
+            <div class="button-container">
+              <div class="send-button">Send</div>
+            </div>
+          </div>
         </div>
       </div>
-      <div style={{ height: 60 }}></div>
-      <Footer />
     </div>
   );
 };

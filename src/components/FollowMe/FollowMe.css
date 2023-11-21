@@ -1,57 +1,96 @@
-.Container {
+.FollowContainer {
   width: 100%;
+  margin-top: 16rem;
+  background: linear-gradient(
+    180deg,
+    rgba(126, 198, 253, 0.7),
+    rgba(0, 93, 164, 0.7) 0,
+    rgba(126, 198, 253, 0) 26%
+  );
+  border-radius: 50%;
+  top: 0;
+  z-index: -2;
 }
 .main_container {
-  padding: 23px;
-  margin: 5.3rem auto;
-  width: 76%;
+  padding-top: 12rem;
+  padding-bottom: 8rem;
+  margin: 3rem auto;
+  width: 86%;
+}
+.cards .separator {
+  margin: auto;
+  text-align: center;
+  background: #50e5ff;
+  height: 70%;
+  text-align: center;
+  justify-content: center;
+  text-align: center;
+}
+.linkCard {
+  margin: 30px auto;
+  width: 100%;
+  border-radius: 20px;
+}
+.linkCard .cards {
+  width: 86%;
+  padding: 20px;
+  display: flex;
+  margin: auto;
+  height: 150px;
+  align-items: center;
 }
 .cardTitle {
-  display: flex;
-  justify-content: space-between;
+  text-align: center;
 }
-.topContainer {
-  margin-top: 2px;
-  display: grid;
-  grid-template-columns: auto auto;
-  /* gap: 38px; */
-  /* width: '100%'; */
+
+.cardTitle .connectTitle {
+  font-weight: bold;
+  font-size: 2rem;
+}
+.cardTitle .connectBtn {
+  border-radius: 30px;
+  padding: 6px 12px;
+  font-size: 1.6rem;
+  text-transform: capitalize;
+  border: 1px solid #79c7ff;
+  transition: all 0.3s ease;
+  color: #79c7ff;
+}
+.cardTitle .connectBtn:hover {
+  border: 1px solid #79c7ff;
+  transform: scale(0.9);
 }
 .main_container .followHeading {
-  color: #0f2e66;
   font-weight: bold;
-  font-size: 23px;
-  letter-spacing: normal;
-  align-items: center;
-  margin-left: 10px;
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 1.6rem;
 }
-.topContainer .linkCard {
-  /* width: 96%; */
-  padding: 10px;
-  margin: auto;
-}
+
 /* media query */
-@media screen and (max-width: 1225px) {
-  .main_container {
-    width: 98%;
-    padding: 6px;
+@media screen and (max-width: 1000px) {
+  .FollowContainer {
+    width: 90%;
   }
-}
-@media screen and (max-width: 880px) {
-  .topContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .topContainer .linkCard {
-    width: 70%;
-  }
-  .main_container .followHeading {
-    text-align: center;
-  }
-}
-@media screen and (max-width: 605px) {
-  .topContainer .linkCard {
+  .linkCard .cards {
     width: 100%;
+    padding: 2px;
+  }
+}
+@media screen and (max-width: 720px) {
+  .FollowContainer {
+    width: 96%;
+  }
+}
+@media screen and (max-width: 585px) {
+  .linkCard .cards {
+    flex-direction: column;
+    height: auto;
+  }
+  .separator {
+    display: none;
+  }
+  .cardTitle {
+    margin-bottom: 2rem;
   }
 }

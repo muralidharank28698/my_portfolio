@@ -11,17 +11,30 @@ import Headerpage from '../Header/Headerpage';
 import Footer from '../Footer';
 import Certification from './Certification';
 import Link from '@mui/material/Link';
+import SkillsExperience from '../SkillsExperience';
+import Grid from '@mui/material/Grid';
+import Paper from '@mui/material/Paper';
+
+const Item = styled(Paper)(({ theme }) => ({
+  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+  ...theme.typography.body2,
+  padding: theme.spacing(1),
+  textAlign: 'center',
+  color: theme.palette.text.secondary,
+}));
 
 const CustomCard = styled(Card)(({ theme }) => ({
   '&.MuiCard-root': {
     background: 'none',
     boxShadow: 'none',
     height: '100%',
-    width: '73%',
-    margin: '18px auto',
+    // width: '73%',
+    margin: 'auto',
+    // paddingTop: 100,
     display: 'flex',
     '& .MuiCardContent-root': {
-      width: '96%',
+      // width: '88%',
+      // margin: 'auto',
       // padding: '0 !important',
       // '& .topic': {
       //   color: '#FFFFFF',
@@ -33,89 +46,88 @@ const CustomCard = styled(Card)(({ theme }) => ({
       //   fontWeight: 'bold',
       //   textShadow: '1px 2px 3px rgb(5, 188, 255)',
       // },
-      '& .objective': {
-        color: '#c6cacd',
-        marginTop: 23,
-        lineHeight: 1.7,
-        marginLeft: 16,
-        fontSize: 16,
-      },
-      '& .role': {
-        color: '#FFFFFF',
-        marginTop: 26,
-        fontSize: 18,
-        boxShadow: '#c6cacd 0px 1px 0px',
-        display: 'inline-block',
-        marginLeft: 16,
-        borderRadius: 2,
-      },
+      // '& .objective': {
+      //   color: '#c6cacd',
+      //   marginTop: 23,
+      //   lineHeight: 1.9,
+      //   // marginLeft: 16,
+      //   fontSize: 16,
+      //   textAlign: 'justify',
+      // },
+      // '& .role': {
+      //   color: '#FFFFFF',
+      //   marginTop: 26,
+      //   fontSize: 18,
+      //   boxShadow: '#c6cacd 0px 1px 0px',
+      //   display: 'inline-block',
+      //   // marginLeft: 16,
+      //   borderRadius: 2,
+      // },
     },
-    '& .MuiCardActions-root': {
-      '& .MuiButton-root': {
-        // background: '#3b82f5',
-        marginTop: 12,
-        marginBottom: 26,
-        marginLeft: 23,
-        color: '#FFFFFF',
-        fontSize: 14,
-        textTransform: 'capitalize',
-        border: '1px solid #00a6d5',
-        // '&:hover': {
-        //   border: '1px solid orange',
-        // },
-      },
-    },
+    // '& .MuiCardActions-root': {
+    //   '& .MuiButton-root': {
+    //     // background: '#3b82f5',
+    //     marginTop: 12,
+    //     marginBottom: 26,
+    //     marginLeft: 12,
+    //     color: '#FFFFFF',
+    //     fontSize: 14,
+    //     textTransform: 'capitalize',
+    //     border: '1px solid #00a6d5',
+    //     // '&:hover': {
+    //     //   border: '1px solid orange',
+    //     // },
+    //   },
+    // },
   },
 }));
 
 const ExperienceCustomTypographyHeading = styled(Typography)(({ theme }) => ({
   '&.MuiTypography-root': {
     marginLeft: 20,
-    padding: 3,
-    fontSize: 26,
+    // padding: 3,
+    fontSize: 20,
     fontWeight: 'bold',
-    color: 'orange',
+    color: '#00c7f6',
   },
 }));
 const ExperienceCustomTypography = styled(Typography)(({ theme }) => ({
   '&.MuiTypography-root': {
     marginLeft: 20,
-    padding: 3,
+    marginTop: 6,
+    // padding: 3,
     fontSize: 15,
-    color: '#a7afbe',
+    // color: '#a7afbe',
   },
 }));
 
 const MainPage = () => {
   return (
     <div className="MainPageContainer">
-      <div className="topContainerContent">
-        <Headerpage />
-        <div className="center_part_top">
-          <CustomCard>
-            <Box>
-              <CardContent>
-                <div className="animationTitle">
-                  <Typography className="topic">
-                    Discovering my amazing
-                    <br />
-                    Art Space..!
-                  </Typography>
-                </div>
-                <Typography className="objective">{AllData?.certerPart?.objective}</Typography>
-                <Typography className="role">{AllData?.certerPart?.role}</Typography>
-              </CardContent>
-              <CardActions>
-                <Link href={AllData?.followMePage.Urls.linkedIn} target="_blank">
-                  <Button size="small" variant="outlined">
-                    Explore now
-                  </Button>
-                </Link>
-              </CardActions>
-            </Box>
-          </CustomCard>
+      <CustomCard>
+        {/* <Box> */}
+        <div className="objectiveContent">
+          <Typography style={{ fontSize: 12, fontWeight: 600, marginBottom: 16 }}>
+            Get to know more
+          </Typography>
+          <div className="animationTitle">
+            <Typography variant="h2" className="topic">
+              About me
+            </Typography>
+          </div>
+          <Typography variant='body1' className="objective">{AllData?.certerPart?.objective}</Typography>
+          {/* <Typography className="role">{AllData?.certerPart?.role}</Typography> */}
         </div>
-        <div className="topContent">
+        {/* <CardActions>
+            <Link href={AllData?.followMePage.Urls.linkedIn} target="_blank">
+              <Button size="small" variant="outlined">
+                Explore now
+              </Button>
+            </Link>
+          </CardActions> */}
+        {/* </Box> */}
+      </CustomCard>
+      {/* <div className="topContent">
           <div className="topContentContainer">
             <div>
               <CardContent>
@@ -136,84 +148,111 @@ const MainPage = () => {
               </div>
             </div>
           </div>
-        </div>
-      </div>
+        </div> */}
       <div className="experienceData">
         <div className="experienceDataContentLeft">
           <img
-            src={require('../../assets/ss-br.png')}
+            src={require('../../assets/aaaa.png')}
             alt=""
-            style={{ width: '80%', height: '100%', margin: '10px auto' }}
+            // style={{ width: '90%', height: '90%' }}
           />
         </div>
         <div className="experienceDataContentRight">
           <Typography variant="h2" className="exTitle">
             Discover my experience <br />
-            and projects...
+            and projects
           </Typography>
-          <div className="experienceColumn">
-            <div
-              // style={{
-              //   // display: 'flex',
-              //   // justifyContent: 'space-between',
-              //   // marginRight: '8rem',
-              // }}
-              className="experienceColumnLeft"
-            >
+          {/* <div className="experienceColumn">
+            <div className="experienceRowTop">
               <div className="individualExperience">
-                <ExperienceCustomTypographyHeading>
-                  {AllData?.certerPart?.reactDeveloper}
-                </ExperienceCustomTypographyHeading>
-                <ExperienceCustomTypography>
+                <Typography className='experienceTitle'>{AllData?.certerPart?.reactDeveloper}</Typography>
+                <Typography className='experienceSubContent'>
                   {AllData?.certerPart?.experience}
-                </ExperienceCustomTypography>
+                </Typography>
               </div>
               <div className="individualExperience">
-                <ExperienceCustomTypographyHeading>
-                  {AllData?.certerPart?.projects}
-                </ExperienceCustomTypographyHeading>
-                <ExperienceCustomTypography>
+                <Typography className='experienceTitle'>{AllData?.certerPart?.projects}</Typography>
+                <Typography className='experienceSubContent'>
                   {AllData?.certerPart?.projectDescription}
-                </ExperienceCustomTypography>
+                </Typography>
               </div>
             </div>
-            <div
-              // style={{
-              //   display: 'flex',
-              //   justifyContent: 'space-between',
-              //   marginRight: '8rem',
-              // }}
-              className="experienceColumnLeft"
-            >
+            <div className="experienceRowBottom">
               <div className="individualExperience">
-                <ExperienceCustomTypographyHeading>
-                  {AllData?.certerPart?.hackerRank}
-                </ExperienceCustomTypographyHeading>
-                <ExperienceCustomTypography>
+                <Typography className='experienceTitle'>{AllData?.certerPart?.hackerRank}</Typography>
+                <Typography className='experienceSubContent'>
                   {AllData?.certerPart?.hackerRankDes}
-                </ExperienceCustomTypography>
+                </Typography>
               </div>
               <div className="individualExperience">
-                <ExperienceCustomTypographyHeading>
-                  {AllData?.certerPart?.deployProjects}
-                </ExperienceCustomTypographyHeading>
-                <ExperienceCustomTypography>
+                <Typography className='experienceTitle'>{AllData?.certerPart?.deployProjects}</Typography>
+                <Typography className='experienceSubContent'>
                   {AllData?.certerPart?.deployProjectsDes}
-                </ExperienceCustomTypography>
+                </Typography>
               </div>
+            </div>
+          </div> */}
+          <div class="experienceGridContainer">
+            <div class="grid-cell-1" className="individualExperience">
+              <ExperienceCustomTypographyHeading>
+                {AllData?.certerPart?.reactDeveloper}
+              </ExperienceCustomTypographyHeading>
+              <ExperienceCustomTypography>
+                {AllData?.certerPart?.experience}
+              </ExperienceCustomTypography>
+            </div>
+            <div class="grid-cell-2" className="individualExperience">
+              <ExperienceCustomTypographyHeading>
+                {AllData?.certerPart?.projects}
+              </ExperienceCustomTypographyHeading>
+              <ExperienceCustomTypography>
+                {AllData?.certerPart?.projectDescription}
+              </ExperienceCustomTypography>
+            </div>
+            <div class="grid-cell-3" className="individualExperience">
+              <ExperienceCustomTypographyHeading>
+                {AllData?.certerPart?.hackerRank}
+              </ExperienceCustomTypographyHeading>
+              <ExperienceCustomTypography>
+                {AllData?.certerPart?.hackerRankDes}
+              </ExperienceCustomTypography>
+            </div>
+            <div class="grid-cell-4" className="individualExperience">
+              <ExperienceCustomTypographyHeading>
+                {AllData?.certerPart?.deployProjects}
+              </ExperienceCustomTypographyHeading>
+              <ExperienceCustomTypography>
+                {AllData?.certerPart?.deployProjectsDes}
+              </ExperienceCustomTypography>
             </div>
           </div>
         </div>
       </div>
       <div className="certification">
+        <Typography
+          style={{
+            fontSize: 12,
+            // marginBottom: '3rem',
+            padding: '0.87rem 1rem',
+            border: '1px solid #1d3b53',
+            // background: 'linear-gradient(95.05deg,#3fa3ef 0,#1d3b53 54.06%)',
+            display: 'inline-block',
+            borderRadius: '6px',
+            margin: '1px',
+            fontWeight: 600,
+          }}
+        >
+          Browse My Recent
+        </Typography>
         <Typography variant="h3" className="title">
           Certification
         </Typography>
         {/* <Divider style={{ width: '78%', margin: 'auto' }} /> */}
         <Certification />
       </div>
-      <div style={{ height: 100 }}></div>
-      <Footer />
+      {/* <div style={{ paddingBottom: "-50" }}></div> */}
+      {/* <div style={{ height: 100 }}></div>
+      <Footer /> */}
     </div>
   );
 };

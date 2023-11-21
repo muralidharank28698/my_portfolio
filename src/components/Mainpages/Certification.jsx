@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './MainPage.css';
-import { Typography } from '@mui/material';
+import { Paper, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -13,30 +13,72 @@ import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import Dialog from '@mui/material/Dialog';
 import Divider from '@mui/material/Divider';
+import Grid from '@mui/material/Grid';
+import FormLabel from '@mui/material/FormLabel';
+import FormControl from '@mui/material/FormControl';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import RadioGroup from '@mui/material/RadioGroup';
+import Radio from '@mui/material/Radio';
+import Link from '@mui/material/Link';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 const CustomCertificateCard = styled(Card)(({ theme }) => ({
   '&.MuiCard-root': {
+    // background: 'linear-gradient(180.2deg, rgb(31 58 80) 80.28%,rgb(9 35 55) 91.98%)',
     background: 'none',
-    maxWidth: 308,
-    boxShadow: 'none',
+    // background: 'linear-gradient(70deg,#003bfd,#00cebc)',
+    width: 260,
+    height: 'auto',
+    // boxShadow: 'none',
     margin: 12,
-    border: '1px solid #d7dddc',
-    '& .MuiCardMedia-root': {
-      objectFit: 'fill',
+    // border: '1px solid #c9e5fb',
+    borderRadius: 10,
+    // padding: 16,
+    // boxShadow: '0 10px 18px rgb(12 87 102 / 25%)',
+    boxShadow: '0 0px 3px 0 rgba(94, 146, 168, 0.621)',
+    // textAlign: 'center',
+    // alignItems: 'center',
+    transition: 'all 0.3s ease',
+    '&:hover': {
+      // background: 'linear-gradient(180.2deg, red 80.28%,rgb(9 35 55) 91.98%)',
+      // background: 'linear-gradient(180.2deg,#173045 69.99%,rgb(7 136 188 / 80%) 91.98%)',
+      opacity: 1,
+      // transition: 'opacity .15s',
+      // transform: 'scale(0.9)',
+      transform: 'scale(1.02)',
+    },
+    '& .MuiCardContent-root': {
+      padding: '16px 10px',
+      textAlign: 'left',
+      // marginBottom: 10,
     },
     '& .MuiTypography-h5': {
-      color: '#0f2e66',
-      fontSize: 18,
-    },
-    '& .MuiTypography-h6': {
-      color: '#707887',
-      fontSize: 12,
+      // color: '#00c7f6',
+      fontSize: 15,
+      // textAlign: 'left',
+      fontWeight: '600',
     },
     '& .MuiButton-root': {
-      width: '100%',
-      fontSize: 12,
-      fontWeight: 'bold',
+      // background: 'linear-gradient(180deg,#2dc4e3,#1186a9)',
+      // paddingBottom: 10,
+      // width: '100%',
+      fontSize: 15,
+      fontWeight: '500',
+      // // border: '1px solid #00c7f6',
+      display: 'inlineBlock',
+      // // margin: 'auto',
+      // borderRadius: 30,
+      color: '#00c7f6',
+      textTransform: 'capitalize',
+      // textAlign: 'left',
+      '&:hover': {
+        color: '#00c7f6',
+        // border: '1px solid #00c7f6',
+      },
     },
+    // '& .MuiSvgIcon-root': {
+    //   color: 'red !important',
+    // },
   },
 }));
 
@@ -51,7 +93,7 @@ const CertificationView = styled(Dialog)(({ theme }) => ({
     display: 'block',
   },
   '& .MuiDialogContent-root': {
-    padding: 10,
+    // padding: 10,
     // paddingTop: 10,
     // paddingLeft: 0,
     // paddingRight: 0,
@@ -120,88 +162,154 @@ const Certification = () => {
   const handleClose = () => {
     setOpen(false);
   };
-
+  const [spacing, setSpacing] = React.useState(2);
   return (
     <>
       <div className="certificateCards">
-        <CustomCertificateCard sx={{ maxWidth: 345, margin: 3 }}>
-          <CardActionArea>
-            <CardMedia
-              component="img"
-              height="240"
-              image={require('../../assets/certificate.jpg')}
+        <CustomCertificateCard style={{}}>
+          <div
+            style={{
+              width: '100%',
+              height: 200,
+              // background: 'linear-gradient(70deg,#003bfd,#00cebc)',
+              background: 'linear-gradient(180deg,rgb(48 182 255),rgba(24,52,72,0))',
+            }}
+          >
+            <img
+              src={require('../../assets/certificate.jpg')}
               alt=""
+              style={{
+                width: '100%',
+                height: '100%',
+                transform: 'rotate(0deg)',
+                borderRadius: 0,
+                padding: 10,
+              }}
             />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                Microfrontends with React: A complete Developer's Guide
-              </Typography>
-              <Typography variant="h6" color="text.secondary">
-                Basic things learned and utilizing Microfrontends with React to construct modular
-                web applications for improved scalability and maintainability.
-              </Typography>
-            </CardContent>
-          </CardActionArea>
+          </div>
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              Microfrontends with React: A complete Developer's Guide
+            </Typography>
+          </CardContent>
           <CardActions>
-            <Button size="small" color="primary" onClick={() => handleClickOpen('first')}>
-              View
+            <Button
+              size="small"
+              onClick={() => handleClickOpen('two')}
+              endIcon={<ArrowForwardIcon />}
+            >
+              Explore
             </Button>
           </CardActions>
         </CustomCertificateCard>
-        <CustomCertificateCard sx={{ maxWidth: 345, margin: 3 }}>
-          <CardActionArea>
-            <CardMedia
-              component="img"
-              height="240"
-              image={require('../../assets/redux-toolkit-certificate.jpg')}
+        <CustomCertificateCard>
+          <div
+            style={{
+              width: '100%',
+              height: 200,
+              background: 'linear-gradient(180deg,rgb(48 182 255),rgba(24,52,72,0))',
+            }}
+          >
+            <img
+              src={require('../../assets/redux-toolkit-certificate.jpg')}
               alt=""
+              style={{
+                width: '100%',
+                height: '100%',
+                transform: 'rotate(0deg)',
+                borderRadius: 0,
+                padding: 10,
+              }}
             />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                The Ultimate Redux Course 2023 - [LATEST Redux-toolkit]
-              </Typography>
-              <Typography variant="h6" color="text.secondary">
-                {/* Proficient in Redux and Redux Toolkit for streamlined state management in React
-                applications. Demonstrated through practical projects in my portfolio. */}
-                {/* Proficient in implementing Redux and Redux Toolkit for state management in React
-                applications, enabling efficient data handling and seamless user experiences. */}
-                Utilized Redux and Redux Toolkit for effective state management in React
-                applications, ensuring smooth data flow and user interactions.
-              </Typography>
-            </CardContent>
-          </CardActionArea>
+          </div>
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              The Ultimate Redux Course 2023 - [LATEST Redux-toolkit]
+            </Typography>
+          </CardContent>
           <CardActions>
-            <Button size="small" color="primary" onClick={() => handleClickOpen('two')}>
-              View
+            <Button
+              size="small"
+              onClick={() => handleClickOpen('two')}
+              endIcon={<ArrowForwardIcon />}
+            >
+              Explore
             </Button>
           </CardActions>
         </CustomCertificateCard>
-        <CustomCertificateCard sx={{ maxWidth: 345, margin: 3 }}>
-          <CardActionArea>
-            <CardMedia
-              component="img"
-              height="240"
-              image={require('../../assets/web-development-certificate.jpeg')}
+        <CustomCertificateCard>
+          <div
+            style={{
+              width: '100%',
+              height: 200,
+              background: 'linear-gradient(180deg,rgb(48 182 255),rgba(24,52,72,0))',
+            }}
+          >
+            <img
+              src={require('../../assets/Typescript-certificate.jpg')}
               alt=""
+              style={{
+                width: '100%',
+                height: '100%',
+                transform: 'rotate(0deg)',
+                borderRadius: 0,
+                padding: 10,
+              }}
             />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                Web Development (NEURA 2020)
-              </Typography>
-              <Typography variant="h6" color="text.secondary">
-                In 2020, I secured first place in my college's Neura web development competition.
-                This win showcases my strong skills and commitment in crafting web solutions,
-                marking a significant milestone in my journey as a web developer.
-              </Typography>
-            </CardContent>
-          </CardActionArea>
+          </div>
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              Mastering TypeScript - 2023 Edition
+            </Typography>
+          </CardContent>
           <CardActions>
-            <Button size="small" color="primary" onClick={() => handleClickOpen('three')}>
-              View
+            <Button
+              size="small"
+              onClick={() => handleClickOpen('two')}
+              endIcon={<ArrowForwardIcon />}
+            >
+              Explore
             </Button>
           </CardActions>
         </CustomCertificateCard>
-        <CustomCertificateCard sx={{ maxWidth: 345, margin: 3 }}>
+        {/* <CustomCertificateCard>
+          <div
+            style={{
+              width: '100%',
+              height: 200,
+              background: 'linear-gradient(180deg,#1c3f59,rgba(24,52,72,0))',
+            }}
+          >
+            <img
+              src={require('../../assets/web-development-certificate.jpeg')}
+              alt=""
+              style={{
+                width: '100%',
+                height: '100%',
+                transform: 'rotate(0deg)',
+                borderRadius: 0,
+                padding: 10,
+              }}
+            />
+          </div>
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              Web Development (NEURA 2020)
+            </Typography>
+          </CardContent>
+          <CardActions>
+            <Button
+              size="small"
+              onClick={() => handleClickOpen('two')}
+              endIcon={<ArrowForwardIcon />}
+            >
+              Explore
+            </Button>
+          </CardActions>
+        </CustomCertificateCard> */}
+      </div>
+
+      {/* <CustomCertificateCard sx={{ maxWidth: 345, margin: 3 }}>
           <CardActionArea>
             <CardMedia
               component="img"
@@ -217,8 +325,6 @@ const Certification = () => {
                 Orientation to Entrepreneurship, gaining valuable insights into the fundamentals of
                 entrepreneurship, business strategy, innovation and equipped with essential
                 knowledge.
-                {/* Learn the basics of entrepreneurship with PDC02_196. Gain essential skills and
-                knowledge to kickstart your business journey and equipped with essential knowledge. */}
               </Typography>
             </CardContent>
           </CardActionArea>
@@ -227,9 +333,9 @@ const Certification = () => {
               View
             </Button>
           </CardActions>
-        </CustomCertificateCard>
-      </div>
-      {modelDialogContent?.map((item) =>
+        </CustomCertificateCard> */}
+      {/* </div> */}
+      {/* {modelDialogContent?.map((item) =>
         item?.key === name ? (
           <>
             <div className="certification">
@@ -262,7 +368,7 @@ const Certification = () => {
             </div>
           </>
         ) : null,
-      )}
+      )} */}
     </>
   );
 };
