@@ -15,7 +15,7 @@
 }
 .experienceContainer .projectCards_1 .leftPart {
   margin: 2rem;
-  width: 250px;
+  width: 308px;
   box-shadow: 0 0px 3px 0 rgba(94, 146, 168, 0.621);
   height: 100%;
   background: linear-gradient(180deg, #39a9ff, rgba(24, 52, 72, 0));
@@ -348,7 +348,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 20px;
-  max-width: 860px;
+  width: 80%;
   margin: 0 auto;
   padding: 20px 0px;
 }
@@ -372,7 +372,12 @@
 }
 @media screen and (max-width: 1200px) {
   .workExperienceCards {
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: auto auto;
+    width: auto;
+  }
+  .workExperienceSinglecard {
+    width: 400px;
+    margin: auto;
   }
 }
 @media screen and (max-width: 925px) {
@@ -380,9 +385,10 @@
     display: flex;
     flex-direction: column;
   }
+}
+@media screen and (max-width: 485px) {
   .workExperienceSinglecard {
-    width: 400px;
-    margin: auto;
+    width: 370px;
   }
 }
 .workExperienceSinglecard .content {

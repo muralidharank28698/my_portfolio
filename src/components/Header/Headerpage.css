@@ -23,7 +23,7 @@
   text-align: center;
   margin: 2px auto;
   border-radius: 50%;
-  box-shadow: 0 10px 20px #094777;
+  box-shadow: 0 3px 10px #094777;
 }
 img {
   width: 100%;
@@ -37,10 +37,10 @@ img {
   padding-top: 2rem;
 }
 .name .myName {
-  background: -webkit-linear-gradient(#02caca, #1beca2);
+  background: -webkit-linear-gradient(#53f7f4, #19486b);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   font-weight: 600;
 }
 .links .menuName {

@@ -3,7 +3,7 @@ import './Headerpage.css';
 import { Link } from '@mui/material';
 import { Box, Typography } from '@mui/material';
 import { AllData } from '../../AllData';
-import MenuIcon from '@mui/icons-material/Menu';
+// import MenuIcon from '@mui/icons-material/Menu';
 import IconButton from '@mui/material/IconButton';
 import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
@@ -30,6 +30,7 @@ import SettingsSuggestOutlinedIcon from '@mui/icons-material/SettingsSuggestOutl
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import Avatar from '@mui/material/Avatar';
+import { ReactComponent as MenuIcon } from './MenuIcon.svg';
 
 const Headerpage = () => {
   const [toggleOpen, setToggleOpen] = useState(false);
@@ -135,8 +136,14 @@ const Headerpage = () => {
       <div className="rightContainer">
         <div className="headerPart">
           <div className="headerPartContent">
-            <IconButton aria-label="delete" color="primary" onClick={handleToggleIcon}>
-              <MenuIcon style={{ fontSize: 35, color: '#FFFFFF' }} />
+            <IconButton
+              aria-label="delete"
+              color="primary"
+              onClick={handleToggleIcon}
+              style={{ width: '40px' }}
+            >
+              {/* <MenuIcon style={{ fontSize: 35, color: '#FFFFFF' }} /> */}
+              <MenuIcon />
             </IconButton>
             <div style={{ display: 'flex' }}>
               <div style={{ marginTop: 10, marginRight: 20 }}>
@@ -247,7 +254,7 @@ const Headerpage = () => {
                 <ListItem disablePadding>
                   <ListItemButton>
                     <ListItemText>
-                      <HLink to="#topSection" className="activeLink" onClick={handleClose}>
+                      <HLink to="#educationSection" className="activeLink" onClick={handleClose}>
                         <div className="links">
                           <SchoolOutlinedIcon fontSize="large" />
                           <Typography className="menuName" style={{ color: '#a9bbcb' }}>
