@@ -345,12 +345,13 @@
 }
 
 .workExperienceCards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 20px;
-  width: 80%;
+  display: flex;
+  /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+  /* grid-gap: 20px; */
+  justify-content: space-between;
+  width: 100%;
   margin: 0 auto;
-  padding: 20px 0px;
+  padding: 3rem 8rem;
 }
 
 .workExperienceSinglecard {
@@ -362,6 +363,8 @@
   box-shadow: 0 0px 3px 0 rgba(94, 146, 168, 0.621);
   border-radius: 12px;
   padding: 30px;
+  width: 48%;
+  margin: 10px;
 }
 .workExperienceSinglecardIcon {
   width: 60px;
@@ -370,25 +373,22 @@
   border-radius: 50%;
   display: inline-block;
 }
-@media screen and (max-width: 1200px) {
-  .workExperienceCards {
-    grid-template-columns: auto auto;
-    width: auto;
-  }
+
+@media screen and (max-width: 925px) {
   .workExperienceSinglecard {
-    width: 400px;
-    margin: auto;
+    margin: 20px auto;
+  }
+  .workExperienceCards {
+    padding: 3rem 1rem;
   }
 }
-@media screen and (max-width: 925px) {
+@media screen and (max-width: 760px) {
   .workExperienceCards {
-    display: flex;
+    padding: 3rem 1rem;
     flex-direction: column;
   }
-}
-@media screen and (max-width: 485px) {
   .workExperienceSinglecard {
-    width: 370px;
+    width: 95%;
   }
 }
 .workExperienceSinglecard .content {

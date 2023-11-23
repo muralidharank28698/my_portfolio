@@ -17,7 +17,7 @@ export const EductionPageTitleTypography = styled(Typography)(({ theme }) => ({
 
 const Educationpage = () => {
   return (
-    <div className="container" id="educationSection">
+    <div className="educationContainer" id="educationSection">
       <div className="contianerBody">
         <div
           style={{

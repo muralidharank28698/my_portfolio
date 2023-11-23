@@ -1,0 +1,8 @@
+.commonSubHeading {
+  border: 1px solid #1d3b53;
+  display: inline-block;
+  border-radius: 6px;
+  margin: 1px;
+  font-size: 12px;
+  padding: 0.87rem 1rem;
+}

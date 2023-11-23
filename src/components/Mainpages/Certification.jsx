@@ -11,7 +11,7 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 const CustomCertificateCard = styled(Card)(({ theme }) => ({
   '&.MuiCard-root': {
     background: 'none',
-    width: 270,
+    maxWidth: 260,
     height: 'auto',
     margin: 12,
     borderRadius: 10,
